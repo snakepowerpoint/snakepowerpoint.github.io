@@ -6,7 +6,7 @@
   <link href="https://snakepowerpoint.github.io/atom.xml" rel="self"/>
   
   <link href="https://snakepowerpoint.github.io/"/>
-  <updated>2021-07-17T10:33:33.020Z</updated>
+  <updated>2021-07-18T16:07:39.877Z</updated>
   <id>https://snakepowerpoint.github.io/</id>
   
   <author>
@@ -17,25 +17,58 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>結果，立刻去做的人得到一切</title>
+    <link href="https://snakepowerpoint.github.io/2021/07/19/do-right-now/"/>
+    <id>https://snakepowerpoint.github.io/2021/07/19/do-right-now/</id>
+    <published>2021-07-18T16:07:39.000Z</published>
+    <updated>2021-07-18T16:07:39.877Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/07/19/do-right-now/do-right-now-cover.jpeg&quot; class=&quot;&quot;&gt;
+
+
+&lt;h3 id=&quot;工作、財富、夢想……&quot;&gt;&lt;a href=&quot;#工作、財富、夢想……&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="書摘" scheme="https://snakepowerpoint.github.io/categories/%E6%9B%B8%E6%91%98/"/>
+    
+    
+    <category term="review" scheme="https://snakepowerpoint.github.io/tags/review/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MIT最打動人心的溝通課</title>
     <link href="https://snakepowerpoint.github.io/2021/07/04/mit-comm/"/>
     <id>https://snakepowerpoint.github.io/2021/07/04/mit-comm/</id>
     <published>2021-07-04T14:57:35.000Z</published>
-    <updated>2021-07-17T10:33:33.020Z</updated>
+    <updated>2021-07-18T09:24:09.122Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h3 id=&quot;書目資訊&quot;&gt;&lt;a href=&quot;#書目資訊&quot; class=&quot;headerlink&quot; title=&quot;書目資訊&quot;&gt;&lt;/a&gt;書目資訊&lt;/h3&gt;&lt;p&gt;書名：MIT最打動人心的溝通課&lt;br&gt;作者：艾德．夏恩（Edgar H.</summary>
+    <summary type="html">&lt;img src=&quot;/2021/07/04/mit-comm/mit-comm-cover.jpg&quot; class=&quot;&quot;&gt;
+
+
+&lt;h3 id=&quot;書目資訊&quot;&gt;&lt;a href=&quot;#書目資訊&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
+    <category term="書摘" scheme="https://snakepowerpoint.github.io/categories/%E6%9B%B8%E6%91%98/"/>
     
-    <category term="review" scheme="https://snakepowerpoint.github.io/tags/review/"/>
+    
+    <category term="溝通" scheme="https://snakepowerpoint.github.io/tags/%E6%BA%9D%E9%80%9A/"/>
     
   </entry>
   
@@ -44,7 +77,7 @@
     <link href="https://snakepowerpoint.github.io/2021/06/20/nuclear/"/>
     <id>https://snakepowerpoint.github.io/2021/06/20/nuclear/</id>
     <published>2021-06-20T14:58:35.000Z</published>
-    <updated>2021-07-04T14:53:58.994Z</updated>
+    <updated>2021-07-18T09:23:45.991Z</updated>
     
     
       
@@ -59,8 +92,31 @@
     
     
     
+    <category term="書摘" scheme="https://snakepowerpoint.github.io/categories/%E6%9B%B8%E6%91%98/"/>
     
-    <category term="review" scheme="https://snakepowerpoint.github.io/tags/review/"/>
+    
+    <category term="核能" scheme="https://snakepowerpoint.github.io/tags/%E6%A0%B8%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>有核不可？擁 / 反核的 33 個關鍵理由</title>
+    <link href="https://snakepowerpoint.github.io/2021/05/30/test/"/>
+    <id>https://snakepowerpoint.github.io/2021/05/30/test/</id>
+    <published>2021-05-30T13:29:04.089Z</published>
+    <updated>2021-06-20T14:21:03.541Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;核能安全嗎？&lt;br&gt;台灣沒有核能會缺電嗎？&lt;br&gt;台灣需不需要核四？&lt;br&gt;讓我們放下意識形態，好好地思考核能吧！&lt;br&gt;讀完本篇，你將會知道：&lt;br&gt;關於核四的主要核心議題，包括核安、核廢料、缺電、經濟發展、產業升級等議題&lt;br&gt;簡介&lt;br&gt;本書的章節安排採用破題法，第一</summary>
+        
+      
+    
+    
+    
     
   </entry>
   
@@ -69,7 +125,7 @@
     <link href="https://snakepowerpoint.github.io/2021/05/30/hello-world/"/>
     <id>https://snakepowerpoint.github.io/2021/05/30/hello-world/</id>
     <published>2021-05-30T13:15:44.970Z</published>
-    <updated>2021-05-30T13:15:44.970Z</updated>
+    <updated>2021-07-18T09:25:40.101Z</updated>
     
     
       
@@ -82,6 +138,12 @@
     
     
     
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="Hexo" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/Hexo/"/>
+    
+    
+    <category term="review" scheme="https://snakepowerpoint.github.io/tags/review/"/>
     
   </entry>
   
