@@ -4,7 +4,7 @@ sudo: false
 
 branches:
   only:
-  - master
+  - blog-source
 
 cache:
   - npm
@@ -25,5 +25,6 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: public
   keep-history: false
+  target_branch: master
   on:
-    branch: master
+    branch: blog-source
