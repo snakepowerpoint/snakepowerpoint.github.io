@@ -1,10 +1,10 @@
 ---
 title: LeetCode 27. Remove element
-tags:
-  - LeetCode
+tags: [LeetCode, easy]
 categories:
   - 程式
   - LeetCode
+  - Array
 date: 2021-08-29 16:17:37
 ---
 
