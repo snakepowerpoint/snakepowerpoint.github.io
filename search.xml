@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/09/04/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>程式</category>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 983. Minimum Cost For Tickets</title>
+    <url>/2021/09/02/min-cost-ticket/</url>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>You have planned some train traveling one year in advance. The days of the year in which you will travel are given as an integer array days. Each day is an integer from 1 to 365.</p>
+<p>Train tickets are sold in three different ways:</p>
+<ul>
+<li>a 1-day pass is sold for costs[0] dollars,</li>
+<li>a 7-day pass is sold for costs[1] dollars, and</li>
+<li>a 30-day pass is sold for costs[2] dollars.</li>
+</ul>
+<p>The passes allow that many days of consecutive travel.</p>
+<ul>
+<li>For example, if we get a 7-day pass on day 2, then we can travel for 7 days: 2, 3, 4, 5, 6, 7, and 8.</li>
+</ul>
+<p>Return the minimum number of dollars you need to travel every day in the given list of days.</p>
+<p>這是我第一次碰到 dynamic programming (DP) 問題，其實最早碰到的應該是費布納西數列，不過那個問題相對簡單。</p>
+<p>本題考 DP 觀念，想法上是第 i 天的花費，是截至第 i-1 天的花費再加上當天的花費。因此，如果第 i 天不用旅遊的話，那該天的花費就是累積到第 i-1 天的花費。反之，如果第 i 天要旅遊的話，那麼有三種情況，分別是第 i-1 天加上 1-day pass、第 i-7 天加上 7-day pass、第 i-30 天加上 30-day pass。透過這種推法，就能導出每個 travel day 的最低花費。要注意的是，起始值 DP(0) 要給一個合理的數字，才能透過 DP 演算法一直往下推 DP(1), DP(2), …, DP(t)。本題把 DP(0) 設為 0 （花費為 0）是個合理的設定。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mincostTickets</span>(<span class="params">self, days: <span class="type">List</span>[<span class="built_in">int</span>], costs: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        dp = [<span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>)] * <span class="number">366</span></span><br><span class="line">        <span class="keyword">for</span> day <span class="keyword">in</span> days:</span><br><span class="line">            dp[day] = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># set initial point</span></span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">366</span>):</span><br><span class="line">            <span class="keyword">if</span> dp[i] == <span class="built_in">float</span>(<span class="string">&quot;inf&quot;</span>):</span><br><span class="line">                dp[i] = dp[i-<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                case1 = dp[<span class="built_in">max</span>(i-<span class="number">1</span>, <span class="number">0</span>)] + costs[<span class="number">0</span>]</span><br><span class="line">                case2 = dp[<span class="built_in">max</span>(i-<span class="number">7</span>, <span class="number">0</span>)] + costs[<span class="number">1</span>]</span><br><span class="line">                case3 = dp[<span class="built_in">max</span>(i-<span class="number">30</span>, <span class="number">0</span>)] + costs[<span class="number">2</span>]</span><br><span class="line">                </span><br><span class="line">                dp[i] = <span class="built_in">min</span>(case1, case2, case3)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[days[-<span class="number">1</span>]]</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>程式</category>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>medium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 15. 3Sum</title>
+    <url>/2021/09/01/three-sum/</url>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.</p>
+<p>Notice that the solution set must not contain duplicate triplets.</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">threeSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">int</span>]]:</span></span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>程式</category>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>medium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 5. Longest Palindromic Substring</title>
+    <url>/2021/09/01/longest-palindromic-subs/</url>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given a string s, return the longest palindromic substring in s.</p>
+<p>本題主要考 string 操作。想法上先建一個 helper function 來找回文的 substring，然後從 string 頭開始，依序帶入 substring 去找回文，並在過程中儲存目前長度最長的 substring，最後便可找到答案。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestPalindrome</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span></span><br><span class="line">        n = <span class="built_in">len</span>(s)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> s</span><br><span class="line">        </span><br><span class="line">        ans = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        max_len = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            subs = self.find_palindrome(s[i:])</span><br><span class="line">                        </span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(subs) &gt; max_len:</span><br><span class="line">                max_len = <span class="built_in">len</span>(subs)</span><br><span class="line">                ans = subs</span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find_palindrome</span>(<span class="params">self, s: <span class="built_in">str</span></span>):</span></span><br><span class="line">        res = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        end = -<span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            end = s.find(s[<span class="number">0</span>], end+<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">if</span> end == -<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            subs = s[:(end+<span class="number">1</span>)]</span><br><span class="line">            <span class="keyword">if</span> subs == subs[::-<span class="number">1</span>]:</span><br><span class="line">                res = subs</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>程式</category>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>medium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 3. Longest Substring Without Repeating Characters</title>
+    <url>/2021/08/31/longest-substring-no-repeat/</url>
+    <content><![CDATA[<p>Given a string s, find the length of the longest substring without repeating characters.</p>
+<p>本題主要測驗 string 的操作，如 slicing 及找尋 substring。解法是依序建立 substring，當遇到有重複的字元時，拿掉該字元以前的所有字元，從該重複字元的下一個開始，並且新增當前的字元。依此類推，當遇到比較長的 substring 時，更新 substring 的長度。全部跑完就能得到最長的 substring。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLongestSubstring</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        subs = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> x <span class="keyword">in</span> subs:</span><br><span class="line">                <span class="keyword">if</span> ans &lt; <span class="built_in">len</span>(subs):</span><br><span class="line">                    ans = <span class="built_in">len</span>(subs)</span><br><span class="line">                </span><br><span class="line">                pos = subs.find(x) + <span class="number">1</span></span><br><span class="line">                subs = subs[pos:] + x</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                subs += x</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> ans &lt; <span class="built_in">len</span>(subs):</span><br><span class="line">            ans = <span class="built_in">len</span>(subs)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>程式</category>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>medium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 2. Add Two Numbers</title>
+    <url>/2021/08/29/add-two-numbers/</url>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<p>這題主要測驗的是 <code>Linked list</code> 的操作，以及餘數的處理。首先新增一個空的 <code>List</code>，並新建一個餘數。接著，遍歷 <code>l1</code> 及 <code>l2</code>，當有述職的時候，就按照位置相加，並且更新餘數，直到 <code>l1</code> 及 <code>l2</code> 都沒有 <code>next</code>。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"># class ListNode:</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, next=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.next = next</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addTwoNumbers</span>(<span class="params">self, l1: <span class="type">Optional</span>[ListNode], l2: <span class="type">Optional</span>[ListNode]</span>) -&gt; <span class="type">Optional</span>[ListNode]:</span></span><br><span class="line">        head = ans = ListNode()</span><br><span class="line">        remainder = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">or</span> l2 <span class="keyword">or</span> remainder:</span><br><span class="line">            l1_val = l1.val <span class="keyword">if</span> l1 <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            l2_val = l2.val <span class="keyword">if</span> l2 <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">            </span><br><span class="line">            summation = l1_val + l2_val + remainder</span><br><span class="line">            remainder = summation // <span class="number">10</span></span><br><span class="line">            </span><br><span class="line">            l1 = l1.<span class="built_in">next</span> <span class="keyword">if</span> l1 <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">            l2 = l2.<span class="built_in">next</span> <span class="keyword">if</span> l2 <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">            ans.<span class="built_in">next</span> = ListNode(summation % <span class="number">10</span>)</span><br><span class="line">            ans = ans.<span class="built_in">next</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> head.<span class="built_in">next</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>程式</category>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>medium</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 1. Two Sum</title>
+    <url>/2021/08/29/two-sum/</url>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
+<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
+<p>You can return the answer in any order.</p>
+<p>一開始的思路是暴力解法，遍歷 <code>nums</code> 中每個數字，然後找該數字是否和後面的數字相加得到 <code>target</code>，不過這個方法最差的情況應該會是 <code>n!</code>，所以換個方式。</p>
+<p>另一個想法是從減法的角度來解，並解透過 hash table 來記錄 <code>nums</code> 中所有元素的 index。做法如下：先建立一個 hash_table，然後遍歷 <code>nums</code> 中所有元素，計算當下元素和 <code>target</code> 的差，然後看 hash_table 裡面有沒有這個差，有的話，等於是得到答案：因為當前這個數字與 hash_table 裡的元素的和就是 <code>target</code>，因此，只要返回當前元素的 index 以及 hash_table 中差值元素的 index 即可。</p>
+<p>如果差不存在的話，則將目前的元素及其 index 存入 hash_table，繼續找下一個。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span></span><br><span class="line">        hash_table = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i, num <span class="keyword">in</span> <span class="built_in">enumerate</span>(nums):</span><br><span class="line">            diff = target - num</span><br><span class="line">            <span class="keyword">if</span> diff <span class="keyword">in</span> hash_table.keys():</span><br><span class="line">                <span class="keyword">return</span> [hash_table[diff], i]</span><br><span class="line">            hash_table[num] = i</span><br><span class="line">            </span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>程式</category>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>easy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode 27. Remove element</title>
+    <url>/2021/08/29/remove-element/</url>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.</p>
+<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.</p>
+<p>Return k after placing the final result in the first k slots of nums.</p>
+<p>Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.</p>
+<p>題目並不難，大意是給定一個含有整數的陣列 <code>nums</code> 及一個整數 <code>val</code>，要把 <code>nums</code> 中所有的 <code>val</code> 都刪掉，然後返回剩餘陣列的長度。條件是必須在 O(1) 的記憶體實現。</p>
+<p>在 python 中，可以透過 <code>list.remove(val)</code> 刪除 <code>list</code> 中的 <code>val</code>。由於 <code>list.remove()</code> 只能刪除第一個出現的 <code>val</code>，因此，透過 while 迴圈來刪除所有 <code>val</code>，同時透過 has_element 這個 tag 來判斷 <code>nums</code> 中是否還有 <code>val</code>，如果已經全部刪除的話，則結束迴圈。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], val: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        has_element = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">while</span> has_element:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                nums.remove(val)</span><br><span class="line">            <span class="keyword">except</span> ValueError:</span><br><span class="line">                has_element = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>程式</category>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>easy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>結果，立刻去做的人得到一切</title>
+    <url>/2021/07/18/do-right-now/</url>
+    <content><![CDATA[<img src="/2021/07/18/do-right-now/do-right-now-cover.jpeg" class="">
+
+
+<p>&nbsp;</p>
+<h3 id="工作、財富、夢想……"><a href="#工作、財富、夢想……" class="headerlink" title="工作、財富、夢想……"></a><em>工作、財富、夢想……</em></h3><h3 id="只要-10-秒鐘-，一切不再遙不可及！"><a href="#只要-10-秒鐘-，一切不再遙不可及！" class="headerlink" title="只要 10 秒鐘 ，一切不再遙不可及！"></a><em>只要 10 秒鐘 ，一切不再遙不可及！</em></h3><h3 id="只要-10-秒鐘，你就能擺脫拖延的人生，成為立刻付諸行動的人。"><a href="#只要-10-秒鐘，你就能擺脫拖延的人生，成為立刻付諸行動的人。" class="headerlink" title="只要 10 秒鐘，你就能擺脫拖延的人生，成為立刻付諸行動的人。"></a><em>只要 10 秒鐘，你就能擺脫拖延的人生，成為立刻付諸行動的人。</em></h3><p>&nbsp;</p>
+<p>你是不是常常訂好了目標，但卻一直無法展開行動？</p>
+<p>你是不是常常覺得時間還很多，不如先耍廢一下？</p>
+<p>你是不是總是要拖到最後一刻，才開始焦慮地工作？</p>
+<p>本書提供你一些小撇步，教你如何提升自己的行動力，擺脫拖延的習慣！</p>
+<p>讀完本篇，你將會知道：</p>
+<ul>
+<li><p>決定你要不要立刻去做一件事情的，不是動力，而是「心情」</p>
+</li>
+<li><p>心情是可以控制的，只要把心情控制在對的狀態下，就能有行動力</p>
+</li>
+<li><p>透過轉換視角，可以幫助自己理出行動的頭緒，降低行動門檻</p>
+</li>
+<li><p>提升周遭的人的效率，讓自己的效率再上一層樓</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="書目資訊"><a href="#書目資訊" class="headerlink" title="書目資訊"></a>書目資訊</h3><p>書名：結果，立刻去做的人得到一切<br>作者：藤由達藏<br>譯者：李璦祺<br>出版社：方智<br>出版日期：2016/12/01</p>
+<p>&nbsp;</p>
+<h3 id="作者介紹"><a href="#作者介紹" class="headerlink" title="作者介紹"></a>作者介紹</h3><p><strong>藤由達藏</strong>，Seminar room gonmatus 負責人，夢想實現聲援家（心理教練），以「人有無限潛在可能」為座右銘，提供各行各業人士，面對面的教練學（Coaching）指導、提高原動力的培訓課程，以及創造力和能力開發的工作坊，服務對象廣泛，包括作家、創作歌手，經營者、創業家、商務人士、學生、親子等等。</p>
+<p>1991年早稻田大學畢業後，進入文具與辦公室家具的製造商PLUS任職。將教練學導入工會活動中，擔任工會成員的研討會講師。多次應東京都立高中家長會、業界團體之邀，進行演講。</p>
+<p>2013年9月，以教練身分自立門戶。以平本Akio為代表董事的Team Flow公司的教練學為核心，統合各種心理技巧、武術、冥想法、工會活動、藝文美術音樂創作等經驗，建立起一套重視「心情與視角之轉換」的獨創方法論。其幽默而富有熱情的講述方式，簡單易懂且充滿親和力。</p>
+<p>為提升緬甸與日本之間的友好與發展，正準備在緬甸設立教練學校。</p>
+<p>&nbsp;</p>
+<h3 id="譯者介紹"><a href="#譯者介紹" class="headerlink" title="譯者介紹"></a>譯者介紹</h3><p><strong>李璦祺</strong>，輔大翻譯所碩士課程修畢，現為專職日文譯者。興趣廣泛，尤其酷愛文字、貓咪與知識。視翻譯為天職，期許自己用文字打開疆界，連結作者與讀者的世界。譯有《由我來改變！：全球企業爭相效法！谷底翻身的女社長痛哭戰記》、《結果，立刻去做的人得到一切》等書。</p>
+<p>&nbsp;</p>
+<h3 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h3><p>前言　採取行動的人，才能改變人生</p>
+<p>第一章　十種習慣讓人無法立刻行動　【了解】</p>
+<p>第二章　十秒內行動的人這樣的思考　【學習】</p>
+<p>第三章　十秒心智轉變法，讓你成為立刻行動的人　【改變自己】</p>
+<p>第四章　做出成果！影響他人的十秒轉變法　【改變周遭】</p>
+<p>第五章　十秒鐘接近人生目標的思考與行動秘訣　【改變人生】</p>
+<p>&nbsp;</p>
+<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>這是一本很不錯的<strong>工具書</strong>，提供很多讓人「立刻行動」的實用技巧。此外，本書還點出一般人對於行動力的誤解，說明人的行動力不是來自於想完成某件事情的「動機」，而是來自於「<strong>心情</strong>」。</p>
+<blockquote>
+<p><strong>拖延的原因</strong></p>
+</blockquote>
+<p>一開始，作者先說明為什麼我們很難立刻去做某件事情，這是因為我們有一些<strong>阻礙行動思考的習慣</strong>，也就是說，雖然我們知道自己想做什麼，知道什麼事情非做不可，但一旦要執行時，就會對自己的行動踩煞車。</p>
+<p>很多人可能都沒注意到自己的這個習慣，因此，想要成為立刻採取行動的人，就要先<strong>認識自己的思考習慣</strong>。這些阻礙行動思考的習慣，不外乎是由以下幾點因素所形成：</p>
+<p>&diams; 對時間的掌控能力不好</p>
+<p>我們在剛開始執行計畫的時候，常常會因為距離期限還有N小時、N天、N個月，就覺得時間還很充裕，不用馬上做。但是，這種「<strong>覺得時間還很多</strong>」的錯覺，是因為自己對於整個計畫沒有全盤的了解，導致錯估了計畫時間軸的結果。而等到最後真的快來不及的時候，還會因為要做的事情太多，而發生<strong>腦袋凍結</strong>，陷入無法思考的窘境。</p>
+<p>例如，學期初的時候總覺得時間還很多，不用急著念書，等到快要期中考的時候，才發現有一大堆科目沒念，一時之間也不知道要從哪開始念起。這種情形就是在一開始錯估了期中考的難易度，以及自己念書所需的時間，才會出現一再拖延的情形，導致最後不得不臨時抱佛腳。</p>
+<p>&diams; 身處在錯誤的情緒下</p>
+<p>決定我們要不要去做某件事情的因素，其實不是想完成某件事情的動機，而是當下的<strong>心情</strong>。例如，我們有時明明想著「要減肥」、「要認真」、「要做一些有意義的事情」，心裡雖然有想做這些事情的動機，但卻常常為了一點小事就失去幹勁，或是突然覺得做起來好麻煩。這並不是因為我們不想做那些事情，而是因為當下的心情不適合做這些事情。回想一下自己專注在做某件事情的時候，心情是不是常常是有幹勁的呢？</p>
+<blockquote>
+<p><strong>心情</strong></p>
+</blockquote>
+<p>既然心情才是驅動我們去做某件事情的原動力，那麼盡量讓自己保持在一個有幹勁的情緒下，就能讓自己擁有很強的行動力。但是，要怎麼讓自己保持在有幹勁的情緒呢？首先，我們必須先認識到：</p>
+<p><code>心情是可以控制的</code></p>
+<p>現在，試著回想一件讓你覺得很氣憤的事情，可以是很久以前的事情，也可以是最近發生的事情。例如：某人欠你錢不還、路上突然有三寶衝出來、雙11沒搶到優惠、政客睜眼說瞎話等等。</p>
+<p>是不是覺得有點生氣？</p>
+<p>原本你在閱讀讀本篇文章的時候，應該是沒有什麼事情讓你感到生氣，但經由回想，你還是感受到憤怒。事實上，不只是憤怒的情緒，大部分的情緒都可以透過一些手法來生成或抑制。作者在書中提供了幾個<strong>重整心情</strong>的方法：</p>
+<ul>
+<li><p>利用<strong>表情、動作、話語</strong>來切換心情</p>
+</li>
+<li><p>透過<strong>回憶</strong>改變心情</p>
+</li>
+<li><p>靠<strong>想像</strong>改變心情</p>
+</li>
+</ul>
+<p>例如，我們可以透過大笑、誇張地放生大笑，讓自己憑空得到快樂；我們也能透過回想一些有趣的事情，讓心情感到愉悅；就算沒有回憶，我們也能透過想像一些有趣的事情或畫面，讓自己感到快樂。</p>
+<p><strong>環境</strong>也是影響心情的重要因素，例如在自己的工作、學習環境擺設一些自己喜歡的裝飾品，把周遭打造得像自己的家，就能讓自己維持好心情。</p>
+<p>總而言之，找到適合自己的方法來調適心情，把情緒維持在一個適合做事的狀態，就能大大提升自己的行動力。</p>
+<blockquote>
+<p><strong>轉換視角</strong></p>
+</blockquote>
+<p>除了將自己的心情控制在具有高行動力的狀態，另一個提升行動力的重點是<strong>視角轉換</strong>。所謂的視角轉換，就是：</p>
+<p><code>對於同一件事情，利用不同的觀點、立場、條件去思考。</code></p>
+<p>透過視角轉換，就能避免在單一視角下可能會遇到的盲點。當你能夠從不同的面相來思考同一件事情的時候，就能對該件事情有越全面的了解，也就越知道該怎麼去執行，降低錯估的機率。</p>
+<p>例如上述「覺得時間還很多」的例子，有很大一部份原因是只用單一視角去評估。如果在期初的時候，就能夠站在「期中的自己」去思考，或是從不同的角度去看待目前的時間規劃，就比較容易判斷下一步該怎麼走。一旦有了頭緒，就能大幅地降低行動的門檻，提高行動力。</p>
+<p>書中還有討論其他阻礙行動思考的習慣，這邊就不多做介紹，只舉其中一個例子－－<strong>過分想要迴避風險</strong>。</p>
+<p>做任何事情都有可能失敗，而害怕失敗的想法會讓人想要逃避，導致我們不去做該做的事情。廣義地說，這裡的風險還包括一些不想面對的事物，例如某個不好的經驗或回憶，或者在做某件事情時，所感受到的痛苦感。因為不想面對這些經驗，所以產生抗拒，並選擇逃避，最後導致拖延的現象。</p>
+<blockquote>
+<p><strong>改變周遭</strong></p>
+</blockquote>
+<p>除了提升自己的行動力，我們還必須影響他人。本書提到，生活中很多事情往往不是我們自己就可以完成，需要藉助他人的幫忙，如果能讓別人也具備很強的行動力，就能進一步提升自己的效率。</p>
+<p>那要如何提升他人的行動力呢？最簡單的方法不外乎是<strong>讚美</strong>他人，讓別人有自信，就能提高他們的行動力。不過，本書認為更有效的做法不是讚美，而是<strong>傳達個人訊息</strong>。所謂傳達個人訊息是指：</p>
+<p><code>將自己所觀察到或感覺到，對方表現好的、了不起的、或令你欣賞的地方，把它告訴對方。</code></p>
+<p>透過傳達這種屬於個人觀察所得出來的讚美，會比單純說「你很棒」還要來得具體且有效，也更能激發對方的潛能，提升對方的行動力。</p>
+<blockquote>
+<p><strong>設定目標</strong></p>
+</blockquote>
+<p>最後，空有行動力還不夠，最重要的是<strong>擁有自己的目標</strong>，才能改變人生。試著問自己：</p>
+<p><code>如果沒有任何限制的話，你希望自己在哪裡做著什麼事情？</code></p>
+<p>每天持續問自己這個問題，你就會越來越清楚自己的人生目標和意義，也會越來越明白那些讓你感到興奮雀躍的願景，以及永不妥協的人生價值觀。</p>
+<p>&nbsp;</p>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>這本書的作者文筆流暢，翻譯也翻得很順，在章節的安排上非常有架構，循序漸進，引導讀者了解拖延的原因，並分析行動力的本質，然後提出解決拖延的辦法，提升行動力。最後還順勢點出一些人生哲理以及人際關係的課題，不過只佔一小部分。</p>
+<p>雖然章節的安排十分嚴謹，但每個章節內部的架構編排相對零散，在內容的陳述上，多半是由一些例子所組成。例如第一章在講為什麼人會有拖延的現象時，並不是用一個系統性的架構去解釋成因，而是舉很多可能會導致拖延習慣的例子。這些例子彼此之間不一定有前後的順序關係，也不一定有因果關係，讀起來會覺得缺乏系統性。此外，書中所舉的例子並非完全和讀者的經驗相吻合，所以有些地方讀起來可能會覺得沒有說服力。</p>
+<p>不過整體而言，這些「沒感覺的例子」並不會造成太嚴重的理解障礙，也不會影響書中整體想要傳達的觀念，以及邏輯的堆疊與推演。</p>
+<p>對於有拖延習慣的人來說，這本書可以提供你一些有效的方法來提升自己的行動力。不過，要擺脫拖延的習慣，最重要的事情是能夠<strong>察覺自己</strong>正在拖延的行為，分析自己拖延的原因，然後再從書中找出對應的解決辦法，實際去執行，才能真正解決拖延的問題。</p>
+]]></content>
+      <categories>
+        <category>書摘</category>
+      </categories>
+      <tags>
+        <tag>心理學</tag>
+        <tag>方法論</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MIT最打動人心的溝通課</title>
+    <url>/2021/07/04/mit-comm/</url>
+    <content><![CDATA[<img src="/2021/07/04/mit-comm/mit-comm-cover.jpg" class="">
+
+
+<p>&nbsp;</p>
+<h3 id="書目資訊"><a href="#書目資訊" class="headerlink" title="書目資訊"></a>書目資訊</h3><p>書名：MIT最打動人心的溝通課<br>作者：艾德．夏恩（Edgar H. Schein）<br>譯者：徐仕美、鄭煥昇<br>出版社：天下文化<br>出版日期：2014/12/26</p>
+<p>&nbsp;</p>
+<h3 id="作者介紹"><a href="#作者介紹" class="headerlink" title="作者介紹"></a>作者介紹</h3><p><strong>艾德．夏恩Edgar H. Schein</strong>，MIT史隆管理學院退休榮譽教授，被尊為管理學界的企業文化大師，也是當代組織心理學的創建者之一。</p>
+<p>夏恩的研究備受讚譽，他的《組織文化與領導》（Organizational Culture and Leadership）是分析組織與文化中最具代表性的著作之一，另有多本組織發展領域的重要著作，包括《組織心理》、《過程諮詢》等。</p>
+<p>夏恩於1952年取得哈佛大學社會心理學博士，自1956年起開始在MIT擔任教職，任教近半個世紀。曾榮獲美國訓練管理者協會（ASTD）頒發職場學習類別的終身成就獎；國際管理學會頒發「Everett Cherrington Hughes Award」，肯定他在生涯研究、主管領導力發展上的貢獻。</p>
+<p>夏恩於2011年遷居至加州帕羅奧圖展開退休人生，並持續寫作，本書是夏恩集五十年心得之大成。</p>
+<p>&nbsp;</p>
+<h3 id="譯者介紹"><a href="#譯者介紹" class="headerlink" title="譯者介紹"></a>譯者介紹</h3><p><strong>徐仕美</strong>，台灣大學植病所碩士，曾任遠哲科學教育基金會編輯、天下文化科學編輯，目前是自由譯者與特約編輯。</p>
+<p><strong>鄭煥昇</strong>，師大翻譯研究所口譯組碩士。譯作有《TED Talk 十八分鐘的祕密》、《跟任何人都可以聊得來》等。</p>
+<p>&nbsp;</p>
+<h3 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h3><p>推薦序 問題的力量 劉鏡清</p>
+<p>前言 有效溝通的關鍵</p>
+<p>第一章    當下的謙遜：建立關係的第一步</p>
+<p>第二章    引導別人打開心房：八個個案分析</p>
+<p>第三章    謙遜提問怎麼問？展現好奇與關心</p>
+<p>第四章    要贏的不失禮：讓人困窘，後患無窮</p>
+<p>第五章    地位、階級、角色造成的心理障礙</p>
+<p>第六章    認識內在的四個自我：避開溝通過程的心理偏誤</p>
+<p>第七章    從調整心態到掌控局面：讓人心服口服的領導人</p>
+<p>&nbsp;</p>
+<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>本書主要在探討什麼是有效的溝通，以及如何達到有效的溝通，而方法就是「<strong>謙遜提問</strong>」。</p>
+<blockquote>
+<p><strong>有效溝通的關鍵</strong></p>
+</blockquote>
+<p>良好的溝通始於<strong>互信</strong>，而互信始於謙遜提問。從心理學的角度來看，人們只有在開放、互相信賴的氛圍下，才會吐露真言。因此，要達到有效的溝通，必須先營造互相信賴的氛圍。為了達到這個目的，我們必須與他人建立關係，而建立關係最好的方式是開口「提問」，更精確來說，是「謙遜提問」。</p>
+<blockquote>
+<p><strong>引導別人打開心房</strong></p>
+</blockquote>
+<p>我們身處在鼓勵「<strong>說</strong>」的主流文化中，因而不善於「<strong>提問</strong>」。但是，「說」並不容易建立關係，因為「說」本身有上對下的意涵，「說」意味著有件事你應該知道，但你不知道，所以我說給你知道。相反的，「問」是將自己的姿態擺低，它所傳達的訊息是我承認自己的無知，並且我願意投入心力向你請教，這種放低姿態的行為，較容易使他人卸下心防，進而建立互信的關係。</p>
+<p>信任關係之所以能夠建立，是因為我先打開了自己的心房，而對方並沒有趁此機會欺負我，於是我開始對對方產生了某種程度的信任，相對的，對方也會開始慢慢信任我，因為提問代表我關注對方，而且我很仔細聆聽對方提供的答案。</p>
+<blockquote>
+<p><strong>謙遜提問</strong></p>
+</blockquote>
+<p>問有分好幾種，如果只是單純的提問，或是表面上看起來是問，但實際上是在說的話，都無法做到有效的溝通，只有謙遜提問才能真正達到有效的溝通。所謂的謙遜提問，是指<strong>承認自己的無知，不帶任何偏見的虛心求教</strong>，它源自於我們對別人的關注與好奇心，是一種想要建立關係的渴望。</p>
+<p>謙遜提問所指的「謙遜」有分三種情況，一種是<strong>基本的謙遜</strong>，這是基於傳統社會文化所產生的一種必然的、天生的謙遜，例如血統、種族等。例如在某些文化中，當人們遇到比自己優越的血統時，會表現出禮貌的行為。另一種謙遜是<strong>選擇性的謙遜</strong>，這種謙遜指的是人們對於成就高過自己的人，所表現出來的敬畏、欽佩或羨慕的行為，例如我們會對諾貝爾獎得主或奧運金牌得主展現敬意。第三種謙遜是<strong>當下的謙遜</strong>，指的是當我依賴你時的內心感受。這種謙遜展現出此刻我的狀態在你之下，因為你掌握了我想完成目標所需、但欠缺的知識或技能。當下的謙遜是謙遜提問中最重要的謙遜形式，大多數時候，我們都是基於當下的謙遜來進行謙遜提問。</p>
+<blockquote>
+<p><strong>因地制宜的謙遜提問</strong></p>
+</blockquote>
+<p>在不同的時機、場合和狀況下，會有不同形式的謙遜提問，大致上可分成診斷式提問、對質式提問、過程導向式提問。<strong>診斷式提問</strong>是一種引導對話走向的提問方式，透過提問，將話題牽引到提問者感興趣的事情上，例如詢問對方的感受與反應、起因與動機、行動導向、系統性問題等。它本質上並不是單方向的「說」，而是透過診斷提問來完成任務。<strong>對質式提問</strong>會加入自己的想法，但仍維持問題的形式。它可以再細分為詢問對方的感受、動機、行動導向等，雖然很容易流於對別人指指點點，但只要動機是出於幫忙對方，仍然可以用來建立信任關係。<strong>過程導向式提問</strong>會先暫停討論的內容，把焦點聚集在當下的互動上，例如詢問對方：「我剛才是不是問太多了？」，這種提問方式可以將彼此拉回對話本身，是破解尷尬的利器，但較難拿捏尺度。</p>
+<p>無論是何種謙遜提問，在建立互信關係的過程中，都會遇到難題。只要保持誠心幫助對方的心態，就能一一化解。相反的，如果內心始終帶著高人一等的好勝心態，假裝出謙遜的樣子，終究無法使人信服。作者建議，如果總是忍不住想「說」，那就記住：<strong>聽者無心，那建議就白給了。</strong></p>
+<blockquote>
+<p><strong>地位、階級、角色所造成的心理障礙</strong></p>
+</blockquote>
+<p>不論是哪個文化，人們從小就被教導在不同的場合中，應該要如何感受及表現，這種因社會文化所形成的地位、階級或角色上的差異，會對人們造成心理障礙，阻礙謙遜提問。例如上司講話的時候，下屬就應該要專心聽，不得提出問題。為了避免這些社會規範所造成的影響，作者建議可以用<strong>個人化</strong>的方式與他人建立關係，也就是把他人視為完整的個人，而非只是執行任務的過程中所扮演的角色，這樣就能透過謙遜提問，與他人建立比任務導向更深厚的關係。</p>
+<blockquote>
+<p><strong>內在自我</strong></p>
+</blockquote>
+<p>除了社會規範，內在的四個自我也會影響溝通，造成溝通的複雜性。內在的四個自我源自於社會心理學中，幫助我們自我認識、接納與成長的周哈里窗（Johari window），根據理論，我們可以透過「自己掌握的訊息」和「別人能掌握的訊息」，將自己分割成四個範疇，包括<strong>隱藏自我、開放自我、未知自我、盲目自我</strong>。這些自我會影響日常的溝通，例如開放自我是自己和他人都知道的自我，這種自我代表的是我們願意且知道可以跟陌生人暢談的話題；而隱藏自我是自己知道但願意透露的事情。在建立關係的過程中，我們會遊走在不同的自我中，並思考要隱藏或揭露自己到什麼程度。</p>
+<blockquote>
+<p><strong>注意心智偏誤與知覺扭曲</strong></p>
+</blockquote>
+<p>人類的大腦會產生<strong>心智偏誤</strong>和<strong>知覺扭曲</strong>，若我們在對話的過程中，因為某些偏誤而誤判情勢，或者不知道什麼行為比較得體時，就無法表現出恰當的謙遜。因此，如果想讓謙遜提問發揮效果，就必須深究這些偏誤和扭曲。</p>
+<p>人類複雜的心理過程可以濃縮成一個簡化的模型，由<strong>觀察（observation）、反應（reaction）、判斷（judgment）、干預（intervention）</strong>四個過程所組成，具體來說，人類會先透過觀察來蒐集環境資訊，再根據觀察結果產生相對應的反應，例如產生情緒。接著，人類會分析和判斷這些資訊，並依照理性與感性思維去策畫行動，然後實際執行（干預）。如果在第一步驟（觀察）中，就盡可能地蒐集正確的資訊並過濾偏誤，就能避免心智偏誤和知覺扭曲。</p>
+<p>最後，作者總結，若要成為一個讓人心服口服的領導人，就要先明白領導始於關係的建立，而適時的謙遜提問可以啟動對話，而對話可以啟動關係的建立。因此，我們應該要努力充實自我，擴展自己的感知與洞察力；多自省，並向自己提問，然後嘗試用謙虛提問來掌握局面。</p>
+<p>&nbsp;</p>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>這本書的章節架構編排得相當好，前言就先總結了本書的內容，讓讀者快速瞭解內容大綱。在接下來的章節中，作者先帶出謙遜提問的基本觀念，但忽略細節不說，而是透過一些個案分析，先讓讀者體會謙遜提問的價值，然後才開始詳細解釋謙遜提問，並說明在不同文化及社會規範下，需要因地制宜使用謙遜提問。書末，作者引用心理學的理論來解釋人腦的運作模式，說明人的心智可能會產生偏誤，因此建議讀者應該努力提升自己的感知能力，以便擷取環境中正確的資訊，再選擇適當的社交行為來和他人打交道。</p>
+<p>雖然這本書的架構編排得很好，但也有一些缺點。首先，作者的論述能力差強人意，常常用很長的篇幅來講一個簡單的概念，而且還講不清楚。例如作者在解釋謙遜提問的形態時，先把提問分成四種類型，分別是謙遜提問、診斷式提問、對質式提問、過程導向式提問，這種分類法會讓人以為謙遜提問和其他三種提問不同，但文中又多次提及這些提問算是謙遜提問的變形，讓人搞不清楚到底這些提問是不是謙遜提問的一種。</p>
+<p>其次，這本書的說服力偏低，主要是因為書中所舉的案例大多不是生活中常見的情境，無法讓人感同身受。例如其中一個案例是作者在擔任系主任時，遇到系上電話費暴增的問題。這種案例比較像是特定的情境，而非一般化的情形。而且，作者在解決問題的過程中，所用到的謙遜提問形式也不太能用在一般的狀況，讀起來不太有說服力。</p>
+<p>最後，這本書有非常多重複論證的地方，190頁的內容，大概只有40-50頁是新的資訊，讀起來有點浪費時間的感覺。</p>
+<p>整體而言，本書所要闡述的觀念並不多，也不難理解。對於想要增進溝通技巧的人來說，這本書可以讓你獲得一些有關溝通的理論基礎，同時提供你一種有效的溝通技巧。對我而言，我印象比較深刻的地方是：「問」是比「說」更有效的溝通方式。這有點違反直覺，但看完解釋後，又覺得十分有道理。我認為可以試著將謙遜提問納入溝通的百寶箱中，選擇適當的時機使用它，應當就能獲得不錯的效果。</p>
+]]></content>
+      <categories>
+        <category>書摘</category>
+      </categories>
+      <tags>
+        <tag>心理學</tag>
+        <tag>方法論</tag>
+        <tag>溝通</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有核不可？擁 / 反核的 33 個關鍵理由</title>
+    <url>/2021/06/20/nuclear/</url>
+    <content><![CDATA[<img src="/2021/06/20/nuclear/book_nuclear.jpg" class="">
+
+
+<p>&nbsp;</p>
+<h3 id="核能安全嗎？"><a href="#核能安全嗎？" class="headerlink" title="核能安全嗎？"></a><em>核能安全嗎？</em></h3><h3 id="台灣沒有核能會缺電嗎？"><a href="#台灣沒有核能會缺電嗎？" class="headerlink" title="台灣沒有核能會缺電嗎？"></a><em>台灣沒有核能會缺電嗎？</em></h3><h3 id="台灣需不需要核四？"><a href="#台灣需不需要核四？" class="headerlink" title="台灣需不需要核四？"></a><em>台灣需不需要核四？</em></h3><h3 id="讓我們放下意識形態，好好地思考核能吧！"><a href="#讓我們放下意識形態，好好地思考核能吧！" class="headerlink" title="讓我們放下意識形態，好好地思考核能吧！"></a><em>讓我們放下意識形態，好好地思考核能吧！</em></h3><p>&nbsp;</p>
+<p>讀完本篇，你將會知道：</p>
+<ul>
+<li>關於核四的主要核心議題，包括核安、核廢料、缺電、經濟發展、產業升級等議題</li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="書目資訊"><a href="#書目資訊" class="headerlink" title="書目資訊"></a>書目資訊</h3><p>書名：有核不可？：擁／反核的33個關鍵理由<br>作者：彭明輝<br>出版社：天下雜誌<br>出版日期：2013/11/27</p>
+<p>&nbsp;</p>
+<h3 id="作者介紹"><a href="#作者介紹" class="headerlink" title="作者介紹"></a>作者介紹</h3><p>彭明輝， 劍橋大學控制工程博士，清華大學動力機械工學系榮譽退休教授。40 歲以前閉門讀書，40 歲以後開始摸索跟這塊土地與同胞互動的方式。目前為農陣自由學者，但最喜歡寫的文章是影評、畫論、小說導讀，以及人生哲學。</p>
+<p>作者自己有經營一個部落格，裡面有非常多時事評論的文章，以及作者平時的心得感想，有興趣可以 google 一下。</p>
+<p>&nbsp;</p>
+<h3 id="目錄"><a href="#目錄" class="headerlink" title="目錄"></a>目錄</h3><p>推薦序</p>
+<p>自序</p>
+<p>一、8個核心問題，快速理解核四</p>
+<p>二、核安的真相</p>
+<p>三、核災的傷害</p>
+<p>四、缺電的迷思</p>
+<p>五、走出悶經濟</p>
+<p>後記、我的核四抉擇</p>
+<p>附錄</p>
+<p>&nbsp;</p>
+<h3 id="簡介"><a href="#簡介" class="headerlink" title="簡介"></a>簡介</h3><p>本書的章節安排採用破題法，第一章就先點出本書將要探討的所有議題，帶大家快速了解幾個有關核能的重要議題，包括核四歷史、核安議題、核輻射外洩、核廢料存放、台灣用電量分析、綠電、碳排放、經濟成長、產業升級等。接著，在第二到第五章作深入的探討，一一檢視第一章所提出的議題，並點出台灣的產業現況，提出實際的解決方針。最後，作者說明<strong>自己反核的立場</strong>，以及反對的理由，並呼籲讀者，不管你支持或不支持核能，都務必要審慎思索核能的議題，<strong>再投下自己神聖的一票</strong>。</p>
+<p>&nbsp;</p>
+<h3 id="心得"><a href="#心得" class="headerlink" title="心得"></a>心得</h3><p>這本書是在 2013 年出版，算是核能議題很好的<strong>入門書</strong>，當時是為了因應核四公投而出版，雖然書有點舊，但在前年（2018 年）舉行的公投中，有一案也與核能相關，使得國內又掀起一波有關核能的論戰，所以這本書也滿適合現在來閱讀。</p>
+<p>作者本身的立場是反核，所以書中的內容多有<strong>偏頗</strong>，大部分的參考資料都是用來佐證反核的論點，即使副標題是「擁/反核的 33 個關鍵理由」，卻看不太到支持核能的論述，只有少數幾個地方提及核能的優點，且後面常常接「但是」開頭的句子，用來否定這些優點，並承接反核的論點。因此，本書的內容並不如標題及推薦序中所呈現的客觀，是一份帶有許多主觀意見的報導。</p>
+<p>雖然本書的內容不盡客觀，但整體而言，本書所提出的議題都是與核能切身相關的重要議題，因此，對於想要<strong>快速了解核能議題</strong>的人，本書還是值得一讀。</p>
+]]></content>
+      <categories>
+        <category>書摘</category>
+      </categories>
+      <tags>
+        <tag>核能發電</tag>
+      </tags>
+  </entry>
+</search>

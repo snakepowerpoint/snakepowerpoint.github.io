@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Rahul&#39;s Blog</title>
+  
+  
+  <link href="https://snakepowerpoint.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://snakepowerpoint.github.io/"/>
+  <updated>2021-09-04T17:07:26.132Z</updated>
+  <id>https://snakepowerpoint.github.io/</id>
+  
+  <author>
+    <name>Rahul Wang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://snakepowerpoint.github.io/2021/09/04/hello-world/"/>
+    <id>https://snakepowerpoint.github.io/2021/09/04/hello-world/</id>
+    <published>2021-09-04T17:07:26.132Z</published>
+    <updated>2021-09-04T17:07:26.132Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="前端" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Hexo" scheme="https://snakepowerpoint.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 983. Minimum Cost For Tickets</title>
+    <link href="https://snakepowerpoint.github.io/2021/09/02/min-cost-ticket/"/>
+    <id>https://snakepowerpoint.github.io/2021/09/02/min-cost-ticket/</id>
+    <published>2021-09-02T16:15:25.000Z</published>
+    <updated>2021-09-04T17:07:26.132Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You have planned some train</summary>
+        
+      
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/"/>
+    
+    <category term="Array" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Array/"/>
+    
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/tags/LeetCode/"/>
+    
+    <category term="medium" scheme="https://snakepowerpoint.github.io/tags/medium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 15. 3Sum</title>
+    <link href="https://snakepowerpoint.github.io/2021/09/01/three-sum/"/>
+    <id>https://snakepowerpoint.github.io/2021/09/01/three-sum/</id>
+    <published>2021-09-01T15:03:49.000Z</published>
+    <updated>2021-09-04T17:07:26.136Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an integer array nums,</summary>
+        
+      
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/"/>
+    
+    <category term="Array" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Array/"/>
+    
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/tags/LeetCode/"/>
+    
+    <category term="medium" scheme="https://snakepowerpoint.github.io/tags/medium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 5. Longest Palindromic Substring</title>
+    <link href="https://snakepowerpoint.github.io/2021/09/01/longest-palindromic-subs/"/>
+    <id>https://snakepowerpoint.github.io/2021/09/01/longest-palindromic-subs/</id>
+    <published>2021-09-01T13:45:58.000Z</published>
+    <updated>2021-09-04T17:07:26.132Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given a string s, return the</summary>
+        
+      
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/"/>
+    
+    <category term="Array" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Array/"/>
+    
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/tags/LeetCode/"/>
+    
+    <category term="medium" scheme="https://snakepowerpoint.github.io/tags/medium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 3. Longest Substring Without Repeating Characters</title>
+    <link href="https://snakepowerpoint.github.io/2021/08/31/longest-substring-no-repeat/"/>
+    <id>https://snakepowerpoint.github.io/2021/08/31/longest-substring-no-repeat/</id>
+    <published>2021-08-31T16:31:01.000Z</published>
+    <updated>2021-09-04T17:07:26.132Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Given a string s, find the length of the longest substring without repeating characters.&lt;/p&gt;
+&lt;p&gt;本題主要測驗 string 的操作，如 slicing 及找尋</summary>
+        
+      
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/"/>
+    
+    <category term="Array" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Array/"/>
+    
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/tags/LeetCode/"/>
+    
+    <category term="medium" scheme="https://snakepowerpoint.github.io/tags/medium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 2. Add Two Numbers</title>
+    <link href="https://snakepowerpoint.github.io/2021/08/29/add-two-numbers/"/>
+    <id>https://snakepowerpoint.github.io/2021/08/29/add-two-numbers/</id>
+    <published>2021-08-29T16:30:07.000Z</published>
+    <updated>2021-09-04T17:07:26.132Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You are given two non-empty</summary>
+        
+      
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/"/>
+    
+    <category term="Array" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Array/"/>
+    
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/tags/LeetCode/"/>
+    
+    <category term="medium" scheme="https://snakepowerpoint.github.io/tags/medium/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 1. Two Sum</title>
+    <link href="https://snakepowerpoint.github.io/2021/08/29/two-sum/"/>
+    <id>https://snakepowerpoint.github.io/2021/08/29/two-sum/</id>
+    <published>2021-08-29T11:03:58.000Z</published>
+    <updated>2021-09-04T17:07:26.136Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an array of integers nums</summary>
+        
+      
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/"/>
+    
+    <category term="Array" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Array/"/>
+    
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/tags/LeetCode/"/>
+    
+    <category term="easy" scheme="https://snakepowerpoint.github.io/tags/easy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 27. Remove element</title>
+    <link href="https://snakepowerpoint.github.io/2021/08/29/remove-element/"/>
+    <id>https://snakepowerpoint.github.io/2021/08/29/remove-element/</id>
+    <published>2021-08-29T08:17:37.000Z</published>
+    <updated>2021-09-04T17:07:26.136Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an integer array nums and</summary>
+        
+      
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/"/>
+    
+    <category term="Array" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Array/"/>
+    
+    
+    <category term="LeetCode" scheme="https://snakepowerpoint.github.io/tags/LeetCode/"/>
+    
+    <category term="easy" scheme="https://snakepowerpoint.github.io/tags/easy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>結果，立刻去做的人得到一切</title>
+    <link href="https://snakepowerpoint.github.io/2021/07/18/do-right-now/"/>
+    <id>https://snakepowerpoint.github.io/2021/07/18/do-right-now/</id>
+    <published>2021-07-18T16:07:39.000Z</published>
+    <updated>2021-09-04T17:07:26.132Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/07/18/do-right-now/do-right-now-cover.jpeg&quot; class=&quot;&quot;&gt;
+
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3 id=&quot;工作、財富、夢想……&quot;&gt;&lt;a href=&quot;#工作、財富、夢想……&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="書摘" scheme="https://snakepowerpoint.github.io/categories/%E6%9B%B8%E6%91%98/"/>
+    
+    
+    <category term="心理學" scheme="https://snakepowerpoint.github.io/tags/%E5%BF%83%E7%90%86%E5%AD%B8/"/>
+    
+    <category term="方法論" scheme="https://snakepowerpoint.github.io/tags/%E6%96%B9%E6%B3%95%E8%AB%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MIT最打動人心的溝通課</title>
+    <link href="https://snakepowerpoint.github.io/2021/07/04/mit-comm/"/>
+    <id>https://snakepowerpoint.github.io/2021/07/04/mit-comm/</id>
+    <published>2021-07-04T14:57:35.000Z</published>
+    <updated>2021-09-04T17:07:26.132Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/07/04/mit-comm/mit-comm-cover.jpg&quot; class=&quot;&quot;&gt;
+
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3 id=&quot;書目資訊&quot;&gt;&lt;a href=&quot;#書目資訊&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="書摘" scheme="https://snakepowerpoint.github.io/categories/%E6%9B%B8%E6%91%98/"/>
+    
+    
+    <category term="心理學" scheme="https://snakepowerpoint.github.io/tags/%E5%BF%83%E7%90%86%E5%AD%B8/"/>
+    
+    <category term="方法論" scheme="https://snakepowerpoint.github.io/tags/%E6%96%B9%E6%B3%95%E8%AB%96/"/>
+    
+    <category term="溝通" scheme="https://snakepowerpoint.github.io/tags/%E6%BA%9D%E9%80%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>有核不可？擁 / 反核的 33 個關鍵理由</title>
+    <link href="https://snakepowerpoint.github.io/2021/06/20/nuclear/"/>
+    <id>https://snakepowerpoint.github.io/2021/06/20/nuclear/</id>
+    <published>2021-06-20T14:58:35.000Z</published>
+    <updated>2021-09-04T17:07:26.136Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/06/20/nuclear/book_nuclear.jpg&quot; class=&quot;&quot;&gt;
+
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3 id=&quot;核能安全嗎？&quot;&gt;&lt;a href=&quot;#核能安全嗎？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="書摘" scheme="https://snakepowerpoint.github.io/categories/%E6%9B%B8%E6%91%98/"/>
+    
+    
+    <category term="核能發電" scheme="https://snakepowerpoint.github.io/tags/%E6%A0%B8%E8%83%BD%E7%99%BC%E9%9B%BB/"/>
+    
+  </entry>
+  
+</feed>
