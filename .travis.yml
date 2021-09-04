@@ -1,8 +1,5 @@
 language: node_js
 
-node_js:
-  - 14
-
 sudo: false
 
 branches:
@@ -13,7 +10,7 @@ cache:
   - npm
 
 node_js:
-  - "10"
+  - "14"
 
 before_script:
   - npm install
