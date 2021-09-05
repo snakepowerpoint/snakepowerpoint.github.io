@@ -880,7 +880,7 @@ body {
   position: relative;
   background-color: #fff;
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.7;
   color: #1e3e3f;
   padding: 0;
@@ -1125,9 +1125,6 @@ img {
   .local-search {
     width: 70rem;
   }
-  .card-quote {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 @media (min-width: 1200px) {
   .tocbot {
@@ -1156,7 +1153,6 @@ img {
   margin-left: -0.5rem;
 }
 .category-list > .category-list-item {
-  display: inline-block;
   padding: 0.5rem 1rem;
 }
 .category-list > .category-list-item:before {
@@ -1183,9 +1179,6 @@ img {
 .video {
   position: relative;
   height: auto;
-}
-.video .brand {
-  width: 4.2rem;
 }
 .video-frame {
   position: absolute;
@@ -1916,7 +1909,7 @@ a.toc-link {
   position: absolute;
   top: 50%;
   left: -3.5rem;
-  margin-top: -0.25rem;
+  margin-top: -0.5rem;
   width: 1rem;
   height: 1rem;
   -webkit-border-radius: 1rem;
@@ -2168,7 +2161,7 @@ pre .javascript .function {
 }
 .gitalk,
 .markdown-body {
-  font-size: 1.4rem !important;
+  font-size: 1.6rem !important;
 }
 .gt-container .gt-avatar.gt-comment-avatar img {
   -webkit-border-radius: 50%;
@@ -2322,73 +2315,6 @@ pre .javascript .function {
     transform: translateY(-100%);
   }
 }
-.card-quote {
-  display: grid;
-  grid-gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-.card-quote blockquote {
-  position: relative;
-  margin: 0;
-  padding: 1.5rem;
-  padding-left: 6rem;
-  overflow: auto;
-  border-left: none;
-  border: 0.1rem #e6e6e6 solid;
-  -webkit-border-radius: 0.4rem;
-  -moz-border-radius: 0.4rem;
-  border-radius: 0.4rem;
-  transition: all 0.3s ease-in-out;
-  line-height: 1.4;
-}
-.card-quote blockquote p:first-child {
-  position: absolute;
-  top: 50%;
-  left: 1.5rem;
-  transform: translateY(-50%);
-}
-.card-quote blockquote p:first-child img {
-  height: 3.2rem;
-  width: 3.2rem;
-}
-.card-quote blockquote h3,
-.card-quote blockquote h4,
-.card-quote blockquote h5 {
-  margin: 0;
-}
-.card-quote blockquote h3 + p,
-.card-quote blockquote h4 + p,
-.card-quote blockquote h5 + p {
-  margin-top: 0;
-  color: #adb5bd;
-  font-size: small;
-}
-.card-quote blockquote a {
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  background: rgba(255,255,255,0.75);
-  color: #172d3e;
-  text-decoration: none;
-  font-size: small;
-  transition: all 0.3s ease-in-out;
-}
-.card-quote blockquote:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 1rem 3rem 0.01rem rgba(23,45,62,0.1);
-  border-color: #f4f4f4;
-}
-.card-quote blockquote:hover a {
-  opacity: 1;
-}
 .navbar {
   position: relative;
   padding-top: 3rem;
@@ -2424,9 +2350,12 @@ pre .javascript .function {
   content: '\f12a';
 }
 .navbar .nav.nav-main .nav-item:nth-child(3) .nav-item-link::before {
-  content: '\f1a9';
+  content: '\f18c';
 }
 .navbar .nav.nav-main .nav-item:nth-child(4) .nav-item-link::before {
+  content: '\f153';
+}
+.navbar .nav.nav-main .nav-item:nth-child(5) .nav-item-link::before {
   content: '\f174';
 }
 .navbar-bottom {
