@@ -9,8 +9,8 @@ branches:
 cache:
   - npm
 
-node_js:
-  - "14"
+node_js: stable
+  # - "14"
 
 before_script:
   - npm install
@@ -25,7 +25,7 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local-dir: public
-  keep-history: false
+  keep-history: true
   target_branch: master
   on:
     branch: blog-source
