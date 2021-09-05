@@ -25,9 +25,9 @@ excerpt_link: Read More...
 
 # # MIIT ICP/IP/DOMAIN
 # beian:
-#   enable: true
+#   enable: false
 #   number: 京ICP备17054916号-2
-#   url: https://beian.miit.gov.cn/
+#   url: https://.miit.gov.cn/
 
 # Tags
 show_count: false
