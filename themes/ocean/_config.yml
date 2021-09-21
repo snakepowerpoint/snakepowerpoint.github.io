@@ -64,3 +64,11 @@ valine:
   avatar: 'mp'
   pageSize: '10'
   placeholder: '請輸入...'
+
+# MathJax Support
+mathjax:
+  enable: true
+  per_page: true
+  # cdn: https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  # cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML

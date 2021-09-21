@@ -118,6 +118,13 @@ feed:
   order_by: -date
 ## End: Config for theme: ocean
 
+math:
+  engine: 'mathjax' # or 'katex'
+  mathjax:
+    # src: custom_mathjax_source
+    config:
+      # MathJax config
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
