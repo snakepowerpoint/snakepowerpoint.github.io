@@ -6,7 +6,7 @@
   <link href="https://snakepowerpoint.github.io/atom.xml" rel="self"/>
   
   <link href="https://snakepowerpoint.github.io/"/>
-  <updated>2021-09-05T08:58:36.803Z</updated>
+  <updated>2021-09-21T08:43:05.167Z</updated>
   <id>https://snakepowerpoint.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://snakepowerpoint.github.io/2021/09/05/hello-world/"/>
-    <id>https://snakepowerpoint.github.io/2021/09/05/hello-world/</id>
-    <published>2021-09-05T08:58:36.803Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <link href="https://snakepowerpoint.github.io/2021/09/21/hello-world/"/>
+    <id>https://snakepowerpoint.github.io/2021/09/21/hello-world/</id>
+    <published>2021-09-21T08:43:05.167Z</published>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
@@ -44,11 +44,42 @@
   </entry>
   
   <entry>
+    <title>看準位置，只賺不賠：掌握投資11大關鍵理論，買股不受傷</title>
+    <link href="https://snakepowerpoint.github.io/2021/09/12/stock-position/"/>
+    <id>https://snakepowerpoint.github.io/2021/09/12/stock-position/</id>
+    <published>2021-09-12T06:57:27.000Z</published>
+    <updated>2021-09-21T08:43:05.167Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/09/12/stock-position/stock-position.jpg&quot; class=&quot;&quot;&gt;
+
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h3 id=&quot;書目資訊&quot;&gt;&lt;a href=&quot;#書目資訊&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="書摘" scheme="https://snakepowerpoint.github.io/categories/%E6%9B%B8%E6%91%98/"/>
+    
+    
+    <category term="股票" scheme="https://snakepowerpoint.github.io/tags/%E8%82%A1%E7%A5%A8/"/>
+    
+    <category term="投資" scheme="https://snakepowerpoint.github.io/tags/%E6%8A%95%E8%B3%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode 983. Minimum Cost For Tickets</title>
     <link href="https://snakepowerpoint.github.io/2021/09/02/min-cost-ticket/"/>
     <id>https://snakepowerpoint.github.io/2021/09/02/min-cost-ticket/</id>
     <published>2021-09-02T16:15:25.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
@@ -79,7 +110,7 @@
     <link href="https://snakepowerpoint.github.io/2021/09/01/three-sum/"/>
     <id>https://snakepowerpoint.github.io/2021/09/01/three-sum/</id>
     <published>2021-09-01T15:03:49.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.171Z</updated>
     
     
       
@@ -110,7 +141,7 @@
     <link href="https://snakepowerpoint.github.io/2021/09/01/longest-palindromic-subs/"/>
     <id>https://snakepowerpoint.github.io/2021/09/01/longest-palindromic-subs/</id>
     <published>2021-09-01T13:45:58.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
@@ -141,7 +172,7 @@
     <link href="https://snakepowerpoint.github.io/2021/08/31/longest-substring-no-repeat/"/>
     <id>https://snakepowerpoint.github.io/2021/08/31/longest-substring-no-repeat/</id>
     <published>2021-08-31T16:31:01.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
@@ -173,7 +204,7 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/add-two-numbers/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/add-two-numbers/</id>
     <published>2021-08-29T16:30:07.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
@@ -204,7 +235,7 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/two-sum/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/two-sum/</id>
     <published>2021-08-29T11:03:58.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.171Z</updated>
     
     
       
@@ -235,7 +266,7 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/remove-element/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/remove-element/</id>
     <published>2021-08-29T08:17:37.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
@@ -266,7 +297,7 @@
     <link href="https://snakepowerpoint.github.io/2021/07/18/do-right-now/"/>
     <id>https://snakepowerpoint.github.io/2021/07/18/do-right-now/</id>
     <published>2021-07-18T16:07:39.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
@@ -297,7 +328,7 @@
     <link href="https://snakepowerpoint.github.io/2021/07/04/mit-comm/"/>
     <id>https://snakepowerpoint.github.io/2021/07/04/mit-comm/</id>
     <published>2021-07-04T14:57:35.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
@@ -330,7 +361,7 @@
     <link href="https://snakepowerpoint.github.io/2021/06/20/nuclear/"/>
     <id>https://snakepowerpoint.github.io/2021/06/20/nuclear/</id>
     <published>2021-06-20T14:58:35.000Z</published>
-    <updated>2021-09-05T08:58:36.803Z</updated>
+    <updated>2021-09-21T08:43:05.167Z</updated>
     
     
       
