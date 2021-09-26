@@ -1,4 +1,7 @@
 <section class="outer">
+  <% if (theme.mathjax){ %>
+    <%- partial('mathjax') %>
+  <% } %>
   <article class="articles">
     <%
         var title = '';
