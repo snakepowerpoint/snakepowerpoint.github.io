@@ -6,7 +6,7 @@
   <link href="https://snakepowerpoint.github.io/atom.xml" rel="self"/>
   
   <link href="https://snakepowerpoint.github.io/"/>
-  <updated>2021-09-25T10:09:34.771Z</updated>
+  <updated>2021-09-26T15:46:15.753Z</updated>
   <id>https://snakepowerpoint.github.io/</id>
   
   <author>
@@ -21,20 +21,16 @@
     <link href="https://snakepowerpoint.github.io/2021/09/12/stock-position/"/>
     <id>https://snakepowerpoint.github.io/2021/09/12/stock-position/</id>
     <published>2021-09-12T06:57:27.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.753Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;img src=&quot;/2021/09/12/stock-position/stock-position.jpg&quot; class=&quot;&quot;&gt;
 
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;h3 id=&quot;書目資訊&quot;&gt;&lt;a href=&quot;#書目資訊&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+&lt;h3 id=&quot;簡介&quot;&gt;&lt;a href=&quot;#簡介&quot; class=&quot;headerlink&quot; title=&quot;簡介&quot;&gt;&lt;/a&gt;簡介&lt;/h3&gt;&lt;p&gt;本書是郭泰投入股市30餘年的心得彙整，作者總結了自己數十年來的操盤經驗，以及20本經典投資書籍的內容，歸納出11個投資的經典理論，包含價值理論、循環理論、位置理論、時間理論、籌碼理論、棄取理論、順勢理論、停損理論、抱股理論、主力理論、選股理論。&lt;/p&gt;
+&lt;p&gt;這些理論中，最重要的就是位置理論，其他理論基本上都是基於位置理論發展而成。想要在股市中賺錢，就必須要低買高賣，而位置理論就是在告訴投資人，股市有分頭部和底部，看清楚底部的位置後，大膽買進，接著長抱股票，等到頭部來臨時，再一舉獲利了結，這就是股票投資的聖盃。&lt;/p&gt;
+&lt;p&gt;底下我總結各個理論的內容：&lt;/p&gt;</summary>
     
     
     
@@ -52,16 +48,22 @@
     <link href="https://snakepowerpoint.github.io/2021/09/02/min-cost-ticket/"/>
     <id>https://snakepowerpoint.github.io/2021/09/02/min-cost-ticket/</id>
     <published>2021-09-02T16:15:25.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.749Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You have planned some train</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You have planned some train traveling one year in advance. The days of the year in which you will travel are given as an integer array days. Each day is an integer from 1 to 365.&lt;/p&gt;
+&lt;p&gt;Train tickets are sold in three different ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a 1-day pass is sold for costs[0] dollars,&lt;/li&gt;
+&lt;li&gt;a 7-day pass is sold for costs[1] dollars, and&lt;/li&gt;
+&lt;li&gt;a 30-day pass is sold for costs[2] dollars.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The passes allow that many days of consecutive travel.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;For example, if we get a 7-day pass on day 2, then we can travel for 7 days: 2, 3, 4, 5, 6, 7, and 8.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Return the minimum number of dollars you need to travel every day in the given list of days.&lt;/p&gt;
+&lt;p&gt;這是我第一次碰到 dynamic programming (DP) 問題，其實最早碰到的應該是費布納西數列，不過那個問題相對簡單。&lt;/p&gt;</summary>
     
     
     
@@ -83,16 +85,13 @@
     <link href="https://snakepowerpoint.github.io/2021/09/01/three-sum/"/>
     <id>https://snakepowerpoint.github.io/2021/09/01/three-sum/</id>
     <published>2021-09-01T15:03:49.000Z</published>
-    <updated>2021-09-25T10:09:34.775Z</updated>
+    <updated>2021-09-26T15:46:15.753Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an integer array nums,</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an integer array nums, return all the triplets &lt;code&gt;[nums[i], nums[j], nums[k]]&lt;/code&gt; such that &lt;code&gt;i != j, i != k&lt;/code&gt;, and &lt;code&gt;j != k&lt;/code&gt;, and &lt;code&gt;nums[i] + nums[j] + nums[k] == 0&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Notice that the solution set must not contain duplicate triplets.&lt;/p&gt;
+&lt;p&gt;題目是給定一串數列，找出所有3個為一組且不重複的 triplets，使得這3個數字的總合為0。&lt;/p&gt;
+&lt;p&gt;這題的解法比較複雜，首先，最簡單的做法是暴力解，需要考慮 &lt;code&gt;nums&lt;/code&gt; 中所有可能的 triplets，時間複雜度會是 $O(N^3)$。&lt;/p&gt;</summary>
     
     
     
@@ -114,16 +113,11 @@
     <link href="https://snakepowerpoint.github.io/2021/09/01/longest-palindromic-subs/"/>
     <id>https://snakepowerpoint.github.io/2021/09/01/longest-palindromic-subs/</id>
     <published>2021-09-01T13:45:58.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.749Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given a string s, return the</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given a string s, return the longest palindromic substring in s.&lt;/p&gt;
+&lt;p&gt;本題主要考 string 操作。想法上先建一個 helper function 來找回文的 substring，然後從 string 頭開始，依序帶入 substring 去找回文，並在過程中儲存目前長度最長的 substring，最後便可找到答案。&lt;/p&gt;</summary>
     
     
     
@@ -145,17 +139,11 @@
     <link href="https://snakepowerpoint.github.io/2021/08/31/longest-substring-no-repeat/"/>
     <id>https://snakepowerpoint.github.io/2021/08/31/longest-substring-no-repeat/</id>
     <published>2021-08-31T16:31:01.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.749Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;Given a string s, find the length of the longest substring without repeating characters.&lt;/p&gt;
-&lt;p&gt;本題主要測驗 string 的操作，如 slicing 及找尋</summary>
-        
-      
+&lt;p&gt;本題主要測驗 string 的操作，如 slicing 及找尋 substring。解法是依序建立 substring，當遇到有重複的字元時，拿掉該字元以前的所有字元，從該重複字元的下一個開始，並且新增當前的字元。依此類推，當遇到比較長的 substring 時，更新 substring 的長度。全部跑完就能得到最長的 substring。&lt;/p&gt;</summary>
     
     
     
@@ -177,16 +165,12 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/add-two-numbers/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/add-two-numbers/</id>
     <published>2021-08-29T16:30:07.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.749Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You are given two non-empty</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.&lt;/p&gt;
+&lt;p&gt;You may assume the two numbers do not contain any leading zero, except the number 0 itself.&lt;/p&gt;
+&lt;p&gt;這題主要測驗的是 &lt;code&gt;Linked list&lt;/code&gt; 的操作，以及餘數的處理。首先新增一個空的 &lt;code&gt;List&lt;/code&gt;，並新建一個餘數。接著，遍歷 &lt;code&gt;l1&lt;/code&gt; 及 &lt;code&gt;l2&lt;/code&gt;，當有述職的時候，就按照位置相加，並且更新餘數，直到 &lt;code&gt;l1&lt;/code&gt; 及 &lt;code&gt;l2&lt;/code&gt; 都沒有 &lt;code&gt;next&lt;/code&gt;。&lt;/p&gt;</summary>
     
     
     
@@ -208,16 +192,13 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/two-sum/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/two-sum/</id>
     <published>2021-08-29T11:03:58.000Z</published>
-    <updated>2021-09-25T10:09:34.775Z</updated>
+    <updated>2021-09-26T15:46:15.753Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an array of integers nums</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.&lt;/p&gt;
+&lt;p&gt;You may assume that each input would have exactly one solution, and you may not use the same element twice.&lt;/p&gt;
+&lt;p&gt;You can return the answer in any order.&lt;/p&gt;
+&lt;p&gt;一開始的思路是暴力解法，遍歷 &lt;code&gt;nums&lt;/code&gt; 中每個數字，然後找該數字是否和後面的數字相加得到 &lt;code&gt;target&lt;/code&gt;，不過這個方法最差的情況應該會是 &lt;code&gt;n!&lt;/code&gt;，所以換個方式。&lt;/p&gt;</summary>
     
     
     
@@ -239,16 +220,15 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/remove-element/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/remove-element/</id>
     <published>2021-08-29T08:17:37.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.753Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an integer array nums and</summary>
-        
-      
+    <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.&lt;/p&gt;
+&lt;p&gt;Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.&lt;/p&gt;
+&lt;p&gt;Return k after placing the final result in the first k slots of nums.&lt;/p&gt;
+&lt;p&gt;Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.&lt;/p&gt;
+&lt;p&gt;題目並不難，大意是給定一個含有整數的陣列 &lt;code&gt;nums&lt;/code&gt; 及一個整數 &lt;code&gt;val&lt;/code&gt;，要把 &lt;code&gt;nums&lt;/code&gt; 中所有的 &lt;code&gt;val&lt;/code&gt; 都刪掉，然後返回剩餘陣列的長度。條件是必須在 O(1) 的記憶體實現。&lt;/p&gt;
+&lt;p&gt;在 python 中，可以透過 &lt;code&gt;list.remove(val)&lt;/code&gt; 刪除 &lt;code&gt;list&lt;/code&gt; 中的 &lt;code&gt;val&lt;/code&gt;。由於 &lt;code&gt;list.remove()&lt;/code&gt; 只能刪除第一個出現的 &lt;code&gt;val&lt;/code&gt;，因此，透過 while 迴圈來刪除所有 &lt;code&gt;val&lt;/code&gt;，同時透過 has_element 這個 tag 來判斷 &lt;code&gt;nums&lt;/code&gt; 中是否還有 &lt;code&gt;val&lt;/code&gt;，如果已經全部刪除的話，則結束迴圈。&lt;/p&gt;</summary>
     
     
     
@@ -270,20 +250,32 @@
     <link href="https://snakepowerpoint.github.io/2021/07/18/do-right-now/"/>
     <id>https://snakepowerpoint.github.io/2021/07/18/do-right-now/</id>
     <published>2021-07-18T16:07:39.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.749Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;img src=&quot;/2021/07/18/do-right-now/do-right-now-cover.jpeg&quot; class=&quot;&quot;&gt;
 
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;h3 id=&quot;工作、財富、夢想……&quot;&gt;&lt;a href=&quot;#工作、財富、夢想……&quot;</summary>
-        
-      
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;工作、財富、夢想……&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;只要 10 秒鐘 ，一切不再遙不可及！&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;只要 10 秒鐘，你就能擺脫拖延的人生，成為立刻付諸行動的人。&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;你是不是常常訂好了目標，但卻一直無法展開行動？&lt;/p&gt;
+&lt;p&gt;你是不是常常覺得時間還很多，不如先耍廢一下？&lt;/p&gt;
+&lt;p&gt;你是不是總是要拖到最後一刻，才開始焦慮地工作？&lt;/p&gt;
+&lt;p&gt;本書提供你一些小撇步，教你如何提升自己的行動力，擺脫拖延的習慣！&lt;/p&gt;
+&lt;p&gt;讀完本篇，你將會知道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;決定你要不要立刻去做一件事情的，不是動力，而是「心情」&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;心情是可以控制的，只要把心情控制在對的狀態下，就能有行動力&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;透過轉換視角，可以幫助自己理出行動的頭緒，降低行動門檻&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;提升周遭的人的效率，讓自己的效率再上一層樓&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
@@ -301,20 +293,18 @@
     <link href="https://snakepowerpoint.github.io/2021/07/04/mit-comm/"/>
     <id>https://snakepowerpoint.github.io/2021/07/04/mit-comm/</id>
     <published>2021-07-04T14:57:35.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.749Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;img src=&quot;/2021/07/04/mit-comm/mit-comm-cover.jpg&quot; class=&quot;&quot;&gt;
 
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;h3 id=&quot;書目資訊&quot;&gt;&lt;a href=&quot;#書目資訊&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+&lt;h3 id=&quot;簡介&quot;&gt;&lt;a href=&quot;#簡介&quot; class=&quot;headerlink&quot; title=&quot;簡介&quot;&gt;&lt;/a&gt;簡介&lt;/h3&gt;&lt;p&gt;本書主要在探討什麼是有效的溝通，以及如何達到有效的溝通，而方法就是「&lt;strong&gt;謙遜提問&lt;/strong&gt;」。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;有效溝通的關鍵&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;良好的溝通始於&lt;strong&gt;互信&lt;/strong&gt;，而互信始於謙遜提問。從心理學的角度來看，人們只有在開放、互相信賴的氛圍下，才會吐露真言。因此，要達到有效的溝通，必須先營造互相信賴的氛圍。為了達到這個目的，我們必須與他人建立關係，而建立關係最好的方式是開口「提問」，更精確來說，是「謙遜提問」。&lt;/p&gt;</summary>
     
     
     
@@ -334,20 +324,22 @@
     <link href="https://snakepowerpoint.github.io/2021/06/20/nuclear/"/>
     <id>https://snakepowerpoint.github.io/2021/06/20/nuclear/</id>
     <published>2021-06-20T14:58:35.000Z</published>
-    <updated>2021-09-25T10:09:34.771Z</updated>
+    <updated>2021-09-26T15:46:15.753Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;img src=&quot;/2021/06/20/nuclear/book_nuclear.jpg&quot; class=&quot;&quot;&gt;
 
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;h3 id=&quot;核能安全嗎？&quot;&gt;&lt;a href=&quot;#核能安全嗎？&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;核能安全嗎？&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;台灣沒有核能會缺電嗎？&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;台灣需不需要核四？&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;讓我們放下意識形態，好好地思考核能吧！&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;讀完本篇，你將會知道：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;關於核四的主要核心議題，包括核安、核廢料、缺電、經濟發展、產業升級等議題&lt;/li&gt;
+&lt;/ul&gt;</summary>
     
     
     
