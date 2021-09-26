@@ -19,6 +19,8 @@ You can return the answer in any order.
 
 一開始的思路是暴力解法，遍歷 ```nums``` 中每個數字，然後找該數字是否和後面的數字相加得到 ```target```，不過這個方法最差的情況應該會是 ```n!```，所以換個方式。
 
+<!--more-->
+
 另一個想法是從減法的角度來解，並解透過 hash table 來記錄 ```nums``` 中所有元素的 index。做法如下：先建立一個 hash_table，然後遍歷 ```nums``` 中所有元素，計算當下元素和 ```target``` 的差，然後看 hash_table 裡面有沒有這個差，有的話，等於是得到答案：因為當前這個數字與 hash_table 裡的元素的和就是 ```target```，因此，只要返回當前元素的 index 以及 hash_table 中差值元素的 index 即可。
 
 如果差不存在的話，則將目前的元素及其 index 存入 hash_table，繼續找下一個。

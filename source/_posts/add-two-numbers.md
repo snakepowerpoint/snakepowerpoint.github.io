@@ -16,6 +16,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 
 這題主要測驗的是 ```Linked list``` 的操作，以及餘數的處理。首先新增一個空的 ```List```，並新建一個餘數。接著，遍歷 ```l1``` 及 ```l2```，當有述職的時候，就按照位置相加，並且更新餘數，直到 ```l1``` 及 ```l2``` 都沒有 ```next```。
 
+<!--more-->
 
 ```python
 # Definition for singly-linked list.

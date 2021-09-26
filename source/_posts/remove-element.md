@@ -23,6 +23,8 @@ Do not allocate extra space for another array. You must do this by modifying the
 
 在 python 中，可以透過 ```list.remove(val)``` 刪除 ```list``` 中的 ```val```。由於 ```list.remove()``` 只能刪除第一個出現的 ```val```，因此，透過 while 迴圈來刪除所有 ```val```，同時透過 has_element 這個 tag 來判斷 ```nums``` 中是否還有 ```val```，如果已經全部刪除的話，則結束迴圈。
 
+<!--more-->
+
 ```python
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:

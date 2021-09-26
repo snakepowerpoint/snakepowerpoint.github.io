@@ -12,6 +12,7 @@ Given a string s, find the length of the longest substring without repeating cha
 
 本題主要測驗 string 的操作，如 slicing 及找尋 substring。解法是依序建立 substring，當遇到有重複的字元時，拿掉該字元以前的所有字元，從該重複字元的下一個開始，並且新增當前的字元。依此類推，當遇到比較長的 substring 時，更新 substring 的長度。全部跑完就能得到最長的 substring。
 
+<!--more-->
 
 ```python
 class Solution:

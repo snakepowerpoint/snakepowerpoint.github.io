@@ -14,6 +14,8 @@ Given a string s, return the longest palindromic substring in s.
 
 本題主要考 string 操作。想法上先建一個 helper function 來找回文的 substring，然後從 string 頭開始，依序帶入 substring 去找回文，並在過程中儲存目前長度最長的 substring，最後便可找到答案。
 
+<!--more-->
+
 ```python
 class Solution:
     def longestPalindrome(self, s: str) -> str:

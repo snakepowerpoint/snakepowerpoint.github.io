@@ -23,8 +23,9 @@ The passes allow that many days of consecutive travel.
 
 Return the minimum number of dollars you need to travel every day in the given list of days.
 
-
 這是我第一次碰到 dynamic programming (DP) 問題，其實最早碰到的應該是費布納西數列，不過那個問題相對簡單。
+
+<!--more-->
 
 本題考 DP 觀念，想法上是第 i 天的花費，是截至第 i-1 天的花費再加上當天的花費。因此，如果第 i 天不用旅遊的話，那該天的花費就是累積到第 i-1 天的花費。反之，如果第 i 天要旅遊的話，那麼有三種情況，分別是第 i-1 天加上 1-day pass、第 i-7 天加上 7-day pass、第 i-30 天加上 30-day pass。透過這種推法，就能導出每個 travel day 的最低花費。要注意的是，起始值 DP(0) 要給一個合理的數字，才能透過 DP 演算法一直往下推 DP(1), DP(2), ..., DP(t)。本題把 DP(0) 設為 0 （花費為 0）是個合理的設定。
 
