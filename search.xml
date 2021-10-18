@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LeetCode 17. Letter Combinations of a Phone Number</title>
+    <url>/2021/09/28/letter-com-num/</url>
+    <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.</p>
+<p>A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.</p>
+<p>Example 1</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Input: digits = &quot;23&quot;</span><br><span class="line">Output: [&quot;ad&quot;,&quot;ae&quot;,&quot;af&quot;,&quot;bd&quot;,&quot;be&quot;,&quot;bf&quot;,&quot;cd&quot;,&quot;ce&quot;,&quot;cf&quot;]</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>題目給定一組數字和英文字母的對照表，問一組 digits 中，所有可能的字母組合，例如 2 和 3 分別對應 abc 及 def，則 <code>23</code> 所有可能的組合就是 <code>[&quot;ad&quot;,&quot;ae&quot;,&quot;af&quot;,&quot;bd&quot;,&quot;be&quot;,&quot;bf&quot;,&quot;cd&quot;,&quot;ce&quot;,&quot;cf&quot;]</code>。</p>
+<p>這是一個滿好的練習題，可以練習到很多演算法的基本觀念，包括遞迴、DFS (depth-first search)、對各種資料結構的基本操作等。</p>
+<p>本題的解法是透過 tree 做 search，概念上可以想像成先將 digits 中所有數字放到 tree 的各階層，例如 <code>23</code> 有二個數字，2 放 root，3 放第一層。其中，2 有 a, b, c 三種可能性，所以在 tree 上 2 有三個 branch，分別接到三個同為 3 的 node，每個 branch 分別代表 a, b, c。同理，3 有 d, e, f 三種可能性，所以這三個 node 各自再接出三個 branch 出來，形成九個 leaf，這九個 leaf 就是 <code>23</code> 這個 digits 所有可能的字母組合。</p>
+<p>其中一個解法是 DFS，從 root 開始，先往左直接探到最深層的 leaf，得到一組答案後，往回一個 node，重複上述的操作，最後就能得到所有的 leaf。</p>
+<p>具體來說，先定義好各個 digits 對應的字母，在樹狀結構下，每一層數字有其對應的字母，如果用 DFS 來解的話，會直探最後一個 digits 對應的所有字母，然後回到上一層的第二個字母，再去配對最後一層所有的字母。這裡透過 <code>cur</code> 紀錄當前深度下的數字所對應的字母，<code>l</code> 表示當前層數，將所有資訊輸入遞迴函數 <code>dfs</code> 中。</p>
+<p>遞迴函數 <code>dfs</code> 一開始會先判斷遞迴的中斷條件，如未滿足，則繼續跑遞迴的主邏輯區塊。一旦中斷條件滿足，<code>dfs</code> 就會把目前所有的字母組合在一起，然後加到結果 <code>ans</code> 中。持續重複以上動作，最後就能得到答案。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">letterCombinations</span>(<span class="params">self, digits: <span class="built_in">str</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">str</span>]:</span></span><br><span class="line">        </span><br><span class="line">        mapping = [<span class="string">&quot;&quot;</span>, <span class="string">&quot;&quot;</span>, <span class="string">&quot;abc&quot;</span>, <span class="string">&quot;def&quot;</span>, <span class="string">&quot;ghi&quot;</span>, <span class="string">&quot;jkl&quot;</span>, <span class="string">&quot;mno&quot;</span>, <span class="string">&quot;pqrs&quot;</span>, <span class="string">&quot;tuv&quot;</span>, <span class="string">&quot;wxyz&quot;</span>]</span><br><span class="line">        cur = [<span class="string">&#x27;&#x27;</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(digits))]</span><br><span class="line">        ans = []</span><br><span class="line">        self.dfs(digits, cur, <span class="number">0</span>, mapping, ans)  <span class="comment"># start recursive</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">self, digits, cur, l, mapping, ans</span>):</span></span><br><span class="line">        <span class="keyword">if</span> l == <span class="built_in">len</span>(digits):  <span class="comment"># condition to stop recursive</span></span><br><span class="line">            <span class="keyword">if</span> l &gt; <span class="number">0</span>:</span><br><span class="line">                ans.append(<span class="string">&quot;&quot;</span>.join(cur))</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> mapping[<span class="built_in">int</span>(digits[l])]:  <span class="comment"># main recursive</span></span><br><span class="line">            cur[l] = c</span><br><span class="line">            self.dfs(digits, cur, l+<span class="number">1</span>, mapping, ans)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>程式</category>
+        <category>LeetCode</category>
+        <category>Search</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>medium</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>看準位置，只賺不賠：掌握投資11大關鍵理論，買股不受傷</title>
     <url>/2021/09/12/stock-position/</url>
     <content><![CDATA[<img src="/2021/09/12/stock-position/stock-position.jpg" class="">
