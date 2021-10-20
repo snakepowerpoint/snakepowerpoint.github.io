@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="4Bpmh1Yz2t8e45hwbv1100_MfYItTbcNdK410z7AAI4" />
   <title>
-    LeetCode 27. Remove element |
+    LeetCode 11. Container With Most Water |
     
     若谷</title>
   
@@ -36,7 +36,7 @@
 <body>
   <main class="content">
     <section class="outer">
-  <article id="post-remove-element" class="article article-type-post" itemscope
+  <article id="post-container-most-water" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -45,7 +45,7 @@
       
 
 <h1 class="article-title" itemprop="name">
-  LeetCode 27. Remove element
+  LeetCode 11. Container With Most Water
 </h1>
 
 
@@ -55,12 +55,12 @@
 
     
     <div class="article-meta">
-      <a href="/2021/08/29/remove-element/" class="article-date">
-  <time datetime="2021-08-29T08:17:37.000Z" itemprop="datePublished">2021-08-29</time>
+      <a href="/2021/10/19/container-most-water/" class="article-date">
+  <time datetime="2021-10-19T15:58:18.000Z" itemprop="datePublished">2021-10-19</time>
 </a>
       
 <div class="article-category">
-  <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F/">程式</a> / <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F/LeetCode/">LeetCode</a> / <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Array/">Array</a>
+  <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F/">程式</a> / <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F/LeetCode/">LeetCode</a> / <a class="article-category-link" href="/categories/%E7%A8%8B%E5%BC%8F/LeetCode/Pointer/">Pointer</a>
 </div>
 
     </div>
@@ -76,23 +76,27 @@
       
       
       
-      <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.</p>
-<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.</p>
-<p>Return k after placing the final result in the first k slots of nums.</p>
-<p>Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.</p>
-<p>題目並不難，大意是給定一個含有整數的陣列 <code>nums</code> 及一個整數 <code>val</code>，要把 <code>nums</code> 中所有的 <code>val</code> 都刪掉，然後返回剩餘陣列的長度。條件是必須在 O(1) 的記憶體實現。</p>
-<p>在 python 中，可以透過 <code>list.remove(val)</code> 刪除 <code>list</code> 中的 <code>val</code>。由於 <code>list.remove()</code> 只能刪除第一個出現的 <code>val</code>，因此，透過 while 迴圈來刪除所有 <code>val</code>，同時透過 has_element 這個 tag 來判斷 <code>nums</code> 中是否還有 <code>val</code>，如果已經全部刪除的話，則結束迴圈。</p>
+      <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.</p>
+<p>Notice that you may not slant the container.</p>
+<p>Example 1:</p>
+<blockquote>
+<p>Input: height = [1,8,6,2,5,4,8,3,7]<br>Output: 49<br>Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.</p>
+</blockquote>
 <span id="more"></span>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], val: <span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        has_element = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">while</span> has_element:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                nums.remove(val)</span><br><span class="line">            <span class="keyword">except</span> ValueError:</span><br><span class="line">                has_element = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br></pre></td></tr></table></figure>
+<p>解題思路：</p>
+<p>暴力解法是用 for 迴圈遍歷任二條線所圍出來的面積，結果可能會受到時間限制無法通過測試。</p>
+<p>另一種解法是雙指針搭配貪婪演算法。首先把指針放在左右端點，然後計算這二個端點所圍出來的面積，並更新目前記錄到的最大面積。接著，剔除高度比較矮的那個端點，把指針往對應的方向往前移動一格，例如左邊指針對應的高度比右邊指針對應的高度矮的話，則左邊的指針往右邊移動一格。</p>
+<p>重複上述的動作，每次都紀錄最大的面積，然後再踢掉最矮的那條線，去找更高的線來圍出更大的面積，直到二個指針相遇。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxArea</span>(<span class="params">self, height: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        r = <span class="built_in">len</span>(height) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> l &lt; r:</span><br><span class="line">            ans = <span class="built_in">max</span>(ans, (r - l) * <span class="built_in">min</span>(height[l], height[r]))</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> height[l] &lt;= height[r]:</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                r -= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ans </span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://snakepowerpoint.github.io/2021/08/29/remove-element/" data-id="ckuzps4wa000og0oc8n0za7fs" class="article-share-link">
+      <a data-url="https://snakepowerpoint.github.io/2021/10/19/container-most-water/" data-id="ckuzps4vz0007g0oc64l306m6" class="article-share-link">
         Share
       </a>
       
-<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy/" rel="tag">easy</a></li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/medium/" rel="tag">medium</a></li></ul>
 
     </footer>
 
@@ -102,19 +106,10 @@
   
 <nav class="article-nav">
   
-  <a href="/2021/08/29/two-sum/" class="article-nav-link">
-    <strong class="article-nav-caption">Newer</strong>
-    <div class="article-nav-title">
-      
-      LeetCode 1. Two Sum
-      
-    </div>
-  </a>
   
-  
-  <a href="/2021/07/18/do-right-now/" class="article-nav-link">
+  <a href="/2021/09/28/letter-com-num/" class="article-nav-link">
     <strong class="article-nav-caption">Older</strong>
-    <div class="article-nav-title">結果，立刻去做的人得到一切</div>
+    <div class="article-nav-title">LeetCode 17. Letter Combinations of a Phone Number</div>
   </a>
   
 </nav>
