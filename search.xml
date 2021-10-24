@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>在 Hexo 插入圖片標題</title>
+    <url>/2021/10/24/hexo-ocean-img-caption/</url>
+    <content><![CDATA[<p>最近在寫文章的時候，突然發現需要替圖片補上標題，上網查了一下，聽說 markdown 可以透過下面的語法，直接幫圖片插入標題：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![](path_to_image)</span><br><span class="line">*image_caption*</span><br></pre></td></tr></table></figure>
+
+<p>不過我自己試了一下發現不行，由 Hexo 渲染的 markdown 文章並無法直接插入圖片標題。繼續爬文後，找到了另一個方法，而且做法相當簡單！</p>
+<span id="more"></span>
+
+<h3 id="步驟一"><a href="#步驟一" class="headerlink" title="步驟一"></a>步驟一</h3><p>首先先安裝 hexo 套件，在 <code>cmd</code> 中輸入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save hexo-image-caption</span><br></pre></td></tr></table></figure>
+
+<h3 id="步驟二"><a href="#步驟二" class="headerlink" title="步驟二"></a>步驟二</h3><p>接著在 hexo 的 config 中加入以下資訊：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># add caption for iamges</span><br><span class="line">image_caption:</span><br><span class="line">  enable: true #false to disable</span><br><span class="line">  class_name: #if you wanna customize the style for the caption,you can assign a class name, default is &#x27;image-caption&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>基本上這樣就大功告成了，往後只要在 markdown 文章中輸入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![caption](img_file_name.jpg)</span><br></pre></td></tr></table></figure>
+
+<p>就能幫圖片插入標題啦！</p>
+<h3 id="補充"><a href="#補充" class="headerlink" title="補充"></a>補充</h3><p>這個方法美中不足的地方是，標題沒辦法置中，爬文發現要另外在文章的 css 中加入一些設定，才能讓圖標置中。以我使用的 ocean 主題為例，在 <code>ocean/source/css/_partial/articles.styl</code> 中加入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.article .image-caption &#123;</span><br><span class="line">    margin: auto;</span><br><span class="line">    display: block;</span><br><span class="line">    text-align: center;</span><br><span class="line">    width: 80%</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣就能讓圖片置中啦了，是不是很簡單！</p>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><p>hexo-image-caption <a href="https://github.com/wayou/hexo-image-caption">https://github.com/wayou/hexo-image-caption</a></p>
+</li>
+<li><p><a href="https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll">https://stackoverflow.com/questions/19331362/using-an-image-caption-in-markdown-jekyll</a></p>
+</li>
+<li><p><a href="https://www.dazhuanlan.com/jokerissb/topics/1160083">https://www.dazhuanlan.com/jokerissb/topics/1160083</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>程式</category>
+        <category>前端</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo, ocean</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode 11. Container With Most Water</title>
     <url>/2021/10/19/container-most-water/</url>
     <content><![CDATA[<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.</p>

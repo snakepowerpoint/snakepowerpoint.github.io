@@ -1821,6 +1821,12 @@ a.toc-link {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
+.article .image-caption {
+  margin: auto;
+  display: block;
+  text-align: center;
+  width: 80%;
+}
 .articles .article {
   padding: 4.5rem 0;
 }

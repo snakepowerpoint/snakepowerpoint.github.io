@@ -6,7 +6,7 @@
   <link href="https://snakepowerpoint.github.io/atom.xml" rel="self"/>
   
   <link href="https://snakepowerpoint.github.io/"/>
-  <updated>2021-10-20T16:12:36.349Z</updated>
+  <updated>2021-10-24T14:51:25.377Z</updated>
   <id>https://snakepowerpoint.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>在 Hexo 插入圖片標題</title>
+    <link href="https://snakepowerpoint.github.io/2021/10/24/hexo-ocean-img-caption/"/>
+    <id>https://snakepowerpoint.github.io/2021/10/24/hexo-ocean-img-caption/</id>
+    <published>2021-10-24T14:12:57.000Z</published>
+    <updated>2021-10-24T14:51:25.377Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;最近在寫文章的時候，突然發現需要替圖片補上標題，上網查了一下，聽說 markdown 可以透過下面的語法，直接幫圖片插入標題：&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;![](path_to_image)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;*image_caption*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;不過我自己試了一下發現不行，由 Hexo 渲染的 markdown 文章並無法直接插入圖片標題。繼續爬文後，找到了另一個方法，而且做法相當簡單！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="程式" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/"/>
+    
+    <category term="前端" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Hexo" scheme="https://snakepowerpoint.github.io/categories/%E7%A8%8B%E5%BC%8F/%E5%89%8D%E7%AB%AF/Hexo/"/>
+    
+    
+    <category term="hexo, ocean" scheme="https://snakepowerpoint.github.io/tags/hexo-ocean/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode 11. Container With Most Water</title>
     <link href="https://snakepowerpoint.github.io/2021/10/19/container-most-water/"/>
     <id>https://snakepowerpoint.github.io/2021/10/19/container-most-water/</id>
     <published>2021-10-19T15:58:18.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.377Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.&lt;/p&gt;
@@ -51,7 +77,7 @@
     <link href="https://snakepowerpoint.github.io/2021/09/28/letter-com-num/"/>
     <id>https://snakepowerpoint.github.io/2021/09/28/letter-com-num/</id>
     <published>2021-09-28T13:49:21.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.377Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.&lt;/p&gt;
@@ -81,7 +107,7 @@
     <link href="https://snakepowerpoint.github.io/2021/09/12/stock-position/"/>
     <id>https://snakepowerpoint.github.io/2021/09/12/stock-position/</id>
     <published>2021-09-12T06:57:27.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.381Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/09/12/stock-position/stock-position.jpg&quot; class=&quot;&quot;&gt;
@@ -108,7 +134,7 @@
     <link href="https://snakepowerpoint.github.io/2021/09/02/min-cost-ticket/"/>
     <id>https://snakepowerpoint.github.io/2021/09/02/min-cost-ticket/</id>
     <published>2021-09-02T16:15:25.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.377Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You have planned some train traveling one year in advance. The days of the year in which you will travel are given as an integer array days. Each day is an integer from 1 to 365.&lt;/p&gt;
@@ -145,7 +171,7 @@
     <link href="https://snakepowerpoint.github.io/2021/09/01/three-sum/"/>
     <id>https://snakepowerpoint.github.io/2021/09/01/three-sum/</id>
     <published>2021-09-01T15:03:49.000Z</published>
-    <updated>2021-10-20T16:12:36.353Z</updated>
+    <updated>2021-10-24T14:51:25.381Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an integer array nums, return all the triplets &lt;code&gt;[nums[i], nums[j], nums[k]]&lt;/code&gt; such that &lt;code&gt;i != j, i != k&lt;/code&gt;, and &lt;code&gt;j != k&lt;/code&gt;, and &lt;code&gt;nums[i] + nums[j] + nums[k] == 0&lt;/code&gt;.&lt;/p&gt;
@@ -173,7 +199,7 @@
     <link href="https://snakepowerpoint.github.io/2021/09/01/longest-palindromic-subs/"/>
     <id>https://snakepowerpoint.github.io/2021/09/01/longest-palindromic-subs/</id>
     <published>2021-09-01T13:45:58.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.377Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given a string s, return the longest palindromic substring in s.&lt;/p&gt;
@@ -199,7 +225,7 @@
     <link href="https://snakepowerpoint.github.io/2021/08/31/longest-substring-no-repeat/"/>
     <id>https://snakepowerpoint.github.io/2021/08/31/longest-substring-no-repeat/</id>
     <published>2021-08-31T16:31:01.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.377Z</updated>
     
     
     <summary type="html">&lt;p&gt;Given a string s, find the length of the longest substring without repeating characters.&lt;/p&gt;
@@ -225,7 +251,7 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/add-two-numbers/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/add-two-numbers/</id>
     <published>2021-08-29T16:30:07.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.377Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.&lt;/p&gt;
@@ -252,7 +278,7 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/two-sum/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/two-sum/</id>
     <published>2021-08-29T11:03:58.000Z</published>
-    <updated>2021-10-20T16:12:36.353Z</updated>
+    <updated>2021-10-24T14:51:25.381Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.&lt;/p&gt;
@@ -280,7 +306,7 @@
     <link href="https://snakepowerpoint.github.io/2021/08/29/remove-element/"/>
     <id>https://snakepowerpoint.github.io/2021/08/29/remove-element/</id>
     <published>2021-08-29T08:17:37.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.381Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;Description&quot;&gt;&lt;a href=&quot;#Description&quot; class=&quot;headerlink&quot; title=&quot;Description&quot;&gt;&lt;/a&gt;Description&lt;/h3&gt;&lt;p&gt;Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.&lt;/p&gt;
@@ -310,7 +336,7 @@
     <link href="https://snakepowerpoint.github.io/2021/07/18/do-right-now/"/>
     <id>https://snakepowerpoint.github.io/2021/07/18/do-right-now/</id>
     <published>2021-07-18T16:07:39.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.377Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/07/18/do-right-now/do-right-now-cover.jpeg&quot; class=&quot;&quot;&gt;
@@ -353,7 +379,7 @@
     <link href="https://snakepowerpoint.github.io/2021/07/04/mit-comm/"/>
     <id>https://snakepowerpoint.github.io/2021/07/04/mit-comm/</id>
     <published>2021-07-04T14:57:35.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.377Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/07/04/mit-comm/mit-comm-cover.jpg&quot; class=&quot;&quot;&gt;
@@ -384,7 +410,7 @@
     <link href="https://snakepowerpoint.github.io/2021/06/20/nuclear/"/>
     <id>https://snakepowerpoint.github.io/2021/06/20/nuclear/</id>
     <published>2021-06-20T14:58:35.000Z</published>
-    <updated>2021-10-20T16:12:36.349Z</updated>
+    <updated>2021-10-24T14:51:25.381Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/06/20/nuclear/book_nuclear.jpg&quot; class=&quot;&quot;&gt;
