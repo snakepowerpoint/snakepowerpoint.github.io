@@ -1,0 +1,172 @@
+---
+title: Natural Language Process (NLP) 簡介
+tags:
+  - deep learning
+  - NLP
+categories: 深度學習
+date: 2021-08-04 17:25:57
+---
+
+<!-- $\require{\amsmath}$ -->
+
+最近因為工作需求，接觸了一些 NLP 的技術，趁著記憶還新鮮的時候，整理一下讀過的東西。以下內容多半是出於我自己的理解，並參考一些別人的文章，如果有發現任何錯誤，歡迎來信告知。
+
+
+&nbsp;
+
+### Natural Language Processing (NLP)
+
+自然語言處理 (NLP) 是一門結合語言學、電腦科學以及人工智慧的技術，目的是讓機器能夠辨認、理解並運用書面或口說形式的人類語言。NLP 的任務包含**自然語言理解 (Natural Language Understanding, NLU)** 及**自然語言生成 (Natural Language Generation)** 。自然語言理解關心的是如何將自然語言轉換成機器可以理解的形式，也就是將自然語言轉換成010010；相反地，NLG 關心的是如何讓機器可以自行產生自然語言。
+
+<!--more-->
+
+早期 (1990年以前) NLP 的技術多半是基於**規則法 (rule-based)** ，直接告訴電腦字詞之間的關係，並清楚定義語法，藉此設計出可以和人類互動的智能系統。Rule-based methods 相當直觀，但缺點是設計者很難窮舉所有排列組合，且系統本身無法舉一反三，只能依照規則做回應，後續的擴展及維護並不容易。
+
+1990s-2010s年代盛行基於**統計模型**的機器學習方法，有別於 rule-based methods，這種方法需要標註資料 (annotated data) 來建模。想法上是透過人工定義的特徵去建立模型，然後用 annotated data 來訓練模型的參數。統計模型大大改善了 rule-based methods 的表現，缺點是受到 label 資料的多寡及好壞所影響，需要大量人工標註的資料。此外，面對不同的 NLP 任務，模型的表現會有顯著的差異，例如文字翻譯和文義理解的統計模型並不同，如果要在特定任務上表現得好，會需要用到該任務的 label 資料，顯示模型的泛用性並不高。最後，在處理更高階、抽象的文義時，人工標註的方式會出現瓶頸，例如我們很難標註一段話的幽默感，這使得機器只能學到一些表象的文字意義。
+
+2010s後深度學習崛起，**類神經網路 (neural network)** 在 NLP 取得巨大的成功，幾乎取代所有 NLP 原有的語言模型。其中，類神經網路在 word representation（將文字轉成vector）上表現得相當突出，取代原有的機率模型 (probabilistic models) 以及人工定義的特徵向量（word vector，通常為 discrete, sparse vector），成功將字詞映射到 embedding space，並用 continuous/distributed representation 來表示字詞，稱為 word embedding。Word embedding 滿足特徵工程的需求，並且解決機器學習法無法表現高階、抽象意涵的語意。此外，深度學習並不需要人工標註資料，這點大大解決了訓練資料有限的問題。
+
+### Language Model
+
+機器是否能理解、運用自然語言，取決於其背後**語言模型（language model）**的好壞，因此，如何設計出一個好的語言模型，是 NLP 領域的核心問題之一。
+
+語言模型源自於語音辨識（speech recognition），操作上是輸入一段語音給語言辨識系統，系統會產生幾個和這段語音比較相符的句子，或者說可能性（機率）比較高的句子，而這個機率的計算就是出自於語言模型。換句話說，語言模型是一種機率模型，用來計算一個句子出現的可能性。
+
+具體而言，句子是由詞所組成，因此，語言模型計算的是：若干個詞組成一個句子的機率有多少，用數學式可以表示成：
+
+$$p(w_1, w_2, ..., w_n)$$
+
+透過條件機率，可以將上述式子表示成：
+
+\begin{align}
+p(w_1, w_2, ..., w_n) &= p(w_n | w_1, ..., w_{n-1}) \cdot p(w_1, ..., w_{n-1}) \\\\
+&= p(w_n | w_1, ..., w_{n-1}) \cdot  p(w_{n-1} | w_1, ..., w_{n-2}) \cdot p(w_1, ..., w_{n-2}) \\\\
+&\quad \vdots \\\\
+&= p(w_1) \prod \limits_{i=2}^n p(w_i | w_1, ..., w_{i-1})
+\end{align}
+
+由上述的推導可知，如果能計算出 $p(w_i | w_1, ..., w_{i-1})$，就能得 $p(w_1, ..., w_n)$。因此，語言模型大多都在處理 $p(w_i | w_1, ..., w_{i-1})$，白話文就是：給定一些字詞，求下一個字的機率是多少，例如給定 a glass of ____，那麼空格中出現 water 的機率應該要比 book 高得多。
+
+語言模型發展至今，模型架構大多都以類神經網路為主，稱為**神經語言模型（neural network language model）**，而在訓練神經語言模型的過程中，所得到的 **word embedding**，更是對後來 NLP 的發展有著深遠的影響。
+
+### Word Embedding
+
+嚴格來說，word embedding 算是語言模型在訓練過程中產生的副產物。2003 年，Bengio 等人提出神經語言模型，成功利用類神經網路預測下一個字詞的機率分布，同時得到 word embedding 這個副產物。
+
+現今要得到 word embedding 有好幾種模型，例如 CBOW、skip-gram、GloVe、等，這些模型訓練的方式大致上都一樣，首先蒐集一大堆由字詞及句子組成的語料庫（corpus），接著依據不同的方法抽出字詞，再藉由 embedding matrix 將字詞轉成 word embedding，然後經過模型，去預測字詞。這種訓練多半是非監督式學習，例如挖空一個句子中的某個字，然後要求模型預測被挖空的字；或者要求模型預測句子中的下一個字等等。當模型訓練完成後，embedding matrix 中的參數也會一併被訓練到，因此我們就能用這個 embedding matrix 將文字轉成具有語義功能的向量，稱為 word embedding。
+
+詳細訓練方法如下：首先將 corpus 中的字詞都表示成 one-hot encode，抽取一段文字，例如每次抽取 4 個字，如 a glass of juice，將 a、glass 及 of 的 one-hot encode 輸入 embedding matrix 各自轉成 word embedding，再經過模型變成 feature，然後把它們 concat 起來，最後輸出 softmax，長度和 input 的 one-hot encode 一樣。由於我們預期 model 會吐出 juice 這個字，所以用 juice 的 one-hot encode 和 output 計算 loss，再透過 back propagation 去更新模型。訓練完成後，就能得到一個訓練過的 embedding matrix（模型的 hidden layer），能夠將文字轉成 word embedding。
+
+Word embedding 的主要貢獻在於：過去機器學習在面對不同 NLP 任務時，例如自動文摘、翻譯、情緒分析等，需要依據任務去設計模型框架，且所需的 label 資料也不同，更慘的是，模型訓練完成後，不一定能泛用到其他任務上。但現在深度學習利用大量的 unlabeled 資料做非監督式學習，可以學到跨任務的 word embedding。當遇到不同的任務時，只需要依據不同的任務去設計對應的 output layer 即可，例如情緒分析就是 classification layer，不需要重新設計模型或 word vector，頂多再微調一下（finetune）模型就好。
+
+### Sequence to Sequence Model
+
+NLP 中常見的問題都是 sequence to sequence (Seq2Seq) 形式，包括翻譯（machine translation）、下標（video captioning, image captioning）、總結（text summarization）、聊天機器人（chatbot）等。在 Seq2Seq 的任務中，輸入和輸出都是一串序列，以翻譯而言，輸入序列「我愛你」，輸出序列「I love you」。目前 Seq2Seq 主流的模型架構都是採取 encoder-decoder architecture，操作上是先將輸入序列經過 encoder 壓縮成 context vector，再透過 decoder 將 context vector 解碼成輸出。
+
+{% asset_img seq2seq.JPG %}
+
+不同模型之間最大的差異就在於 encoder 及 decoder 裡，處理序列的單元及方法是什麼，底下整理一些常見的序列模型：
+
+#### Recurrent neural network（RNN）
+ 
+ <!-- ![<a> 圖片來源 </a>](SimpleRNN.png) -->
+ {% asset_img SimpleRNN.png %}
+ <span class="image-caption"><a href=https://colah.github.io/posts/2015-08-Understanding-LSTMs/>圖片來源</a></span>
+
+RNN 是最基礎用來處理時間序列的神經網路模型，透過持續將每個時間點的資訊，傳遞到下一個時間點，讓模型能夠記住以前看過的東西。具體來說，對於 $t$ 時間點的輸入 $x_t$，把它和前一個時間點 $t-1$ 的 hidden layer vector $h_{t-1}$ 融合成 $t$ 時間點的 $h_t$，然後經過 output layer 輸出 $y_t$，同時 $h_t$ 傳入下一層。用數學式表示可以寫成：
+
+$$ 
+h_t = sigm(W^{hx}x_t + W^{hh}h_{t-1})  \\\\ 
+y_t = W^{yh}h_t
+$$
+
+RNN 雖然能夠處理資料在時間上的相依性問題，但其缺點在於訓練過程中會有梯度消失（vanishing gradients）的問題，即損失函數無法反向傳播回序列最前面（如 $t=1$）的輸入，所以模型更新後只能處理最近看過的輸入，白話意思就是模型無法記住太久以前看過的東西。
+
+#### Long Short Term Memory (LSTM)
+ 
+ {% asset_img LSTM.png %}
+ <span class="image-caption"><a href=https://colah.github.io/posts/2015-08-Understanding-LSTMs/>圖片來源</a></span>
+
+為了解決 RNN 梯度消失的問題，學界陸續提出許多方法，其中一個比較經典的方法是 LSTM。LSTM 其實早在1997年就被 Hochreiter 提出，只是在近十年才被應用在 NLP 上。LSTM 主要由 input gate、forget gate 及 output gate 所組成，數學表示式如下：
+
+$$
+f_t = \sigma_g (W^{fx}x_t + U^{fh}h_{t-1} + b_f)  \\\\
+i_t = \sigma_g (W^{ix}x_t + U^{ih}h_{t-1} + b_i)  \\\\
+o_t = \sigma_g (W^{ox}x_t + U^{oh}h_{t-1} + b_o)  \\\\
+c_t = f_t \cdot c_{t-1} + i_t \cdot \sigma_c(W^{cx}x_t + U^{ch}h_{t-1} + b_c)  \\\\
+h_t = o_t \cdot \sigma_h(c_t)
+$$
+
+其中，$f$、$i$、$o$ 分別代表 forget、input 及 output。LSTM 最關鍵的角色是 forget gate，他會在 output 前的 $c_t$ 中控制模型是否要忘記之前看過的東西，故而在一定程度上解決了梯度消失的問題。
+
+另一個和 LSTM 類似的架構稱作 GRU (Gate Recurrent Unit)，其目的也在於解決 RNN 梯度消失的問題，架構上和 LSTM 類似，差別在於 GRU 將 LSTM 的三個閘門融合成二個，降低了模型的參數量，同時維持差不多的模型表現，因此更適合應用。這邊就不詳細介紹。
+
+#### Attention
+
+一般的 encoder-decoder 架構用數學式可以表示成：
+
+$$
+y_1 = f(c, s_0)  \\\\
+y_2 = f(c, s_1)  \\\\
+y_3 = f(c, s_2)  \\\\
+\quad \vdots
+$$
+
+其中 $c$ 是輸入序列經過 encoder 後所產生的 context vector，而 $s$ 是 decoder 中的 hidden layer output，類似前述 decoder 的 $h$。這種架構最大的問題是：decoder 在每個時間點 $t$ 的 output 都只會參考整句 input 所壓成的 context vector。例如翻譯模型如果要將「我愛你」翻譯成英文時，在輸出「I」之前，模型會參考「我愛你」這整句話的 context vector。那模型究竟是如何判斷要先輸出「I」還是「You」呢？如果今天輸入的是被動語態，那模型會不會誤判主詞的順序呢？
+
+為了讓模型在產生輸出序列時有更多的參考資訊，Bahdanau 在2015年提出了注意力（attention）機制。該模型和一般 encoder-decoder 架構最大的差異在於：decoder 在每個時間的 output $y_i$ 所參考的 context vector 是 $c_i$，而非 $c$。換句話說，每個 $y_i$ 所參考的 context vector 都不同。用數學式可以表示成：
+
+$$
+p(y_i | y_1, ..., y_{i-1}, \mathbf{x}) = g(y_{i-1}, s_i, c_i)
+$$
+
+$s_i$ 是 decoder 中的 hidden state。那麼問題就來了：$c_i$ 究竟是如何算出來的呢？回想 attention 設計的初衷是為了讓 decoder 在產生每個 $y_i$ 時，能夠參考輸入序列中不同的地方，再藉此產生最適合的 $y_i$，例如模型在輸出「I」時，應該參考輸入序列中的「我」。因此，$c_i$ 的設計如下：
+
+$$
+c_i = \sum_{j=1}^{T_x} \alpha_{ij} h_j
+$$
+
+其中 $\alpha_{ij}$ 為 $h_j$ 的權重，$h_j$ 是 $x_j$ 的 hidden state，而 $T_x$ 是 $\mathbf{x}$ 的長度。
+
+{% asset_img attention.JPG %}
+<span class="image-caption"><a href=https://arxiv.org/pdf/1409.0473.pdf>圖片來源</a></span>
+
+於是，我們就達到「模型在產生 $y_i$ 時，會參考輸入序列的不同地方」。但是，$\alpha_{ij}$ 究竟是如何算出來的呢？它其實是依據所有 $h_{ij}$ 計算而得：
+
+$$
+\alpha_{ij} = \frac{\exp(e_{ij})} {\sum_{k=1}^{T_x} \exp(e_{ik})}
+$$
+
+其中 $e_{ij} = a(s_{i-1}, h_j)$，而 $a$ 是一個配對模型（alignment model），在原文中是一個神經網路，用來計算 $s_{i-1}$ 和 $h_j$ 的配對分數，以當作 $h_j$ 的加權比重。這意思就是說，模型在產生 $y_i$ 前，會先依據 decoder 到目前為止所得到的資訊 $s_i$，去和輸入序列中每個 $x_j$ (或稱 $h_j$) 做比對，藉此算出每個 $h_j$ 的權重，再用這些權重算出該時間點的 context vector $c_i$，然後結合 $y_{i-1}$ 及 $s_i$ 去產生最佳的 $y_i$。
+
+經過上述 attention 的設計，模型就有能力在不同的時間點 $i$ 產生不同的 context vector $c_i$，並且這個 $c_i$ 會隨著時間點的不同而去參考輸入序列中不同的地方，例如模型在輸出空格「I love ___ 」時，可能就會多加參考「我愛你」的「你」，然後再輸出 you。
+
+
+### Summary
+
+到目前為止，我們簡單介紹了 NLP 的基本概念，以及 NLP 中的核心問題－－語言模型。基於神經語言模型，NLP 發展出了 word embedding 的概念，將抽象的文義用數值的方式來呈現。如今，透過預訓練後的 word embedding，再串接下游的任務，形成 NLP 主流的訓練方式。
+
+NLP 中知名的語言模型有 RNN、LSTM、Attention 等，近幾年流行的模型有 Transformer 及 BERT，不過它們都是基於 attention 發展而成。下一篇我們將延伸 attention 的概念，並引出當前主流的模型架構－－Transformer。
+
+
+### To Be Continued
+
+> **Transformer - All you need is attention**
+
+> **Vision Transformers (ViT) 影像領域要被 NLP 終結了嗎？** 
+
+
+&nbsp;
+
+### 參考資料
+
+https://zhuanlan.zhihu.com/p/32292060
+
+https://oosga.com/pillars/nlp/
+
+https://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
+http://dprogrammer.org/rnn-lstm-gru
+
+https://tengyuanchang.medium.com/%E6%AF%94%E8%BC%83%E9%95%B7%E7%9F%AD%E6%9C%9F%E8%A8%98%E6%86%B6%E6%A8%A1%E5%9E%8B-lstm-%E8%88%87%E6%94%B9%E8%89%AF%E5%BE%8C%E7%9A%84%E9%81%9E%E6%AD%B8%E7%A5%9E%E7%B6%93%E7%B6%B2%E8%B7%AF%E6%A8%A1%E5%9E%8B-gru-813dec22ec6d
+
